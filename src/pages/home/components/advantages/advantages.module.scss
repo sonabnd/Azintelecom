@@ -1,0 +1,171 @@
+@import '/src/assets/styles/style.scss';
+
+.advantages {
+    .advantagesContainer {
+        background-color: $white;
+        background-image: url('/src/assets/images/statics/advantages-bg.png');
+        padding-top: rem(120);
+        padding-bottom: rem(128);
+        border-radius: rem(48);
+        margin-top: rem(24);
+
+        @include breakpoint($lg) {
+            padding: rem(64) 0;
+        }
+
+        .headerRow {
+            .leftRight {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: rem(64);
+                align-items: center;
+
+                @include breakpoint($lg) {
+                    flex-direction: column;
+                    margin-bottom: rem(48);
+                    align-items: flex-start;
+                }
+
+                h2 {
+                    font-size: rem($heading);
+                    background: linear-gradient(90deg, #121926 0%, #697586 100%);
+                    background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    font-feature-settings: 'ss03';
+
+                    @include breakpoint($lg) {
+                        margin-bottom: rem(12);
+                        background: linear-gradient(90deg, #121212 0%, #444444 100%);
+                        background-clip: text;
+                    }
+
+                    @include breakpoint($md) {
+                        font-size: rem(24);
+                    }
+                }
+
+                p {
+                    font-size: rem($text);
+                    background: radial-gradient(278.27% 278.27% at -178.27% 100%, #111111 0%, #A5A5A5 100%);
+                    background-clip: text;
+                    -webkit-text-fill-color: transparent;
+
+                    @include breakpoint($md) {
+                        font-size: rem(14);
+                    }
+
+                    @include breakpoint($lg) {
+                        background: radial-gradient(50% 50% at 50% 59.37%, #090909 0%, #616161 100%);
+                        background-clip: text;
+                    }
+                }
+            }
+        }
+
+        .advantagesBottom {
+            .rowContainer {
+                background-color: $white;
+                display: flex;
+                overflow-x: scroll;
+                scroll-snap-type: x mandatory;
+                width: 100%;
+                overflow-x: auto;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+
+                .rowContainer::-webkit-scrollbar {
+                    display: none;
+                }
+
+                .boxContainer {
+                    @include breakpoint($lg) {
+                        flex: 0 0 37%;
+                    }
+
+                    .box {
+                        position: relative;
+                        overflow: hidden;
+                        border: 1px solid $gray-200;
+                        padding: 0 rem(48);
+                        box-sizing: border-box;
+                        height: rem(614);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        z-index: 10;
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: 50%;
+                            height: 100%;
+                            width: 0;
+                            background: radial-gradient(215.08% 100% at 100% 0%, #000000 14%, #335FEE 100%);
+                            transition: width 1s ease;
+                            z-index: -1;
+                            transform: translateX(-50%);
+                        }
+
+                        &:hover::before {
+                            width: 200%;
+
+                        }
+
+                        .inner {
+                            .img {
+                                width: rem(80);
+                                height: rem(80);
+                                img{
+                                    width: 100%;
+                                    height: 100%;
+                                }
+                            }
+
+                            h3 {
+                                font-size: rem(32);
+                                margin-bottom: rem(24);
+                                margin-top: rem(24);
+                                color: $gray-800;
+                                font-family: $jakartaBold;
+                                line-height: rem(40);
+
+                                @include breakpoint($md) {
+                                    font-size: rem(20);
+                                    line-height: rem(20);
+                                }
+                            }
+
+                            p {
+                                font-size: rem($text);
+                                color: $gray-700;
+                                line-height: rem(28);
+
+                                @include breakpoint($md) {
+                                    font-size: rem($mobile-text);
+                                    line-height: rem(18);
+                                }
+                            }
+                        }
+
+                    }
+
+                    .box:hover .boxTitle {
+                        color: $white;
+                    }
+
+                    .box:hover p {
+                        color: $white;
+                    }
+                    .box:hover .img {
+                        width: rem(96);
+                        height: rem(96);
+                        transition: 0.7s;
+                    }
+
+                }
+
+            }
+        }
+    }
+}

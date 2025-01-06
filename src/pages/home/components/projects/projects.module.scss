@@ -1,0 +1,312 @@
+@import '/src/assets/styles/style.scss';
+
+.projects {
+    background-color: $white;
+    padding-top: rem(120);
+    padding-bottom: rem(120);
+    margin-top: rem(24);
+    border-radius: rem($container-radius);
+    @include breakpoint($lg) {
+        padding-top: rem(64);
+        padding-bottom: rem(64);
+        background-image: url('/src/assets/images/statics/advantages-bg.png');
+        background-size: cover;
+    }
+    .intro {
+        .heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: rem(64);
+            @include breakpoint($lg) {
+                flex-direction: column;
+                align-items: flex-start; 
+            }
+            h2 {
+                font-size: rem($heading);
+                color: $gray-800;
+                font-feature-settings: "ss03";
+                @include breakpoint($md) {
+                    font-size: rem(24); 
+                }
+            }
+            .headingRight {
+                display: flex;
+                gap: rem(8);
+                align-items: center;
+                text-align: right; 
+                @include breakpoint($lg) {
+                    width: 100%;
+                    justify-content: flex-end;
+                    margin-top: rem(16);
+                }
+                span {
+                    text-decoration: underline;
+                    color: $gray-500;
+                    font-size: rem($text);
+                    text-underline-offset: 6px;
+                    @include breakpoint($lg) {
+                        text-decoration: none;
+                        color: $gray-900;
+                        font-family: $jakartaMedium;
+                    }
+                }
+                i {
+                    color: $gray-900;
+                    font-size: rem(18);
+                    display: none;
+                    @include breakpoint($lg) {
+                        display: block;
+                        padding-top: rem(4);
+                    }
+                }
+                .mobileLine {
+                    display: none;
+                    // border: 1px solid $gray-300;
+                    background-color: $gray-300;
+                    height: 1px;
+                    width: rem(40);
+                    @include breakpoint($lg) {
+                        display: block;
+                    }
+                }
+            }
+        }
+        .mobileSlider{
+            display: none;
+            @include breakpoint($lg) {
+                display: block;
+            }
+            .mobileCard {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                &:hover {
+                    border-left: 4px solid $blue-500;
+                    object-fit: cover;
+                    background-color: #f8fafc;
+                }
+                .innerCard {
+                    box-sizing: border-box;
+                    padding: rem(16) rem(24) rem(16) rem(24);
+                    cursor: pointer;
+                            p {
+                                font-family: $jakartaSemiBold;
+                                font-size: rem($text);
+                                color: $gray-900;
+                                line-height: rem(26);
+                                margin-bottom: rem(8);
+                                // height: rem(84);
+                                // display: -webkit-box;
+                                // -webkit-line-clamp: 3;
+                                // -webkit-box-orient: vertical;
+                                // overflow: hidden;
+                                // text-overflow: ellipsis;
+                            }
+    
+                            .dateCategory {
+                                display: flex;
+                                gap: rem(8);
+                                color: $gray-800;
+                                font-size: rem(14);
+                                .date,
+                                .category {
+                                    padding: rem(8) rem(12);
+                                    background-color: $gray-200;
+                                    border-radius: rem(100);
+                                    margin-top: rem(20);
+                                    @include breakpoint($xl) {
+                                        margin-top: rem(10);
+                                    }
+                                }
+                            }
+                        }
+    
+                    // &:hover .date {
+                    //     background-color: $black-gray;
+                    //     color: $white;
+                    // }
+    
+                }
+                i {
+                    color: $gray-300;
+                    font-size: rem(24);
+                    margin-right: rem(12);
+                }
+                &:hover i {
+                    color: $blue-500;
+                }
+        }
+        .main {
+            position: relative;
+            gap: rem(48);
+            @include breakpoint($lg) {
+                background-color: $gray-white;
+                border-radius: rem(24);
+                display: flex;
+                flex-direction: column;
+                margin-top: rem(24);
+            }
+            .leftSide {
+                img {
+                    border-radius: rem(24);
+                    object-fit: cover;
+                    @include breakpoint($lg) {
+                        border-radius: 0;
+                        border-top-left-radius: rem(24);
+                        border-top-right-radius: rem(24);
+                    }
+                }
+            }
+
+            .rightSide {
+                padding-top: rem(120);
+                position: relative;
+                height: 100%;
+                @include breakpoint($lg) {
+                    padding: rem(16) rem(20);
+                }
+                p {
+                    color: $gray-700;
+                    font-family: $jakartaBold;
+                    line-height: rem(32);
+                    font-size: rem(24);
+                    @include breakpoint($md) {
+                        font-size: rem(14);
+                        line-height: rem(20);
+                        font-weight: $jakartaSemiBold;
+                    }
+                }
+                .paginationNavigation {
+                    display: flex;
+                    justify-content: space-between;
+                    left: 0;
+                    right: 0;
+                    position: absolute;
+                    bottom: rem(16);
+                    @include breakpoint($lg) {
+                        display: none;
+                    }
+                    .customPagination {
+                        display: flex ;
+                        gap: rem(8);
+                        margin-top: rem(24);
+                        z-index: 20;
+                        cursor: pointer;
+                    }
+                    .navigation {
+                        display: flex;
+                        i {
+                            font-size: rem(32);
+                            color: $gray-300;
+                            cursor: pointer;
+                            &:first-child {
+                                margin-right: rem(16);
+                            }
+                            :hover {
+                                transition: 0.3s;
+                                color: $gray-700;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .slider {
+                position: absolute;
+                padding-left: rem(96);
+                bottom: 0;
+                right: 0;
+                left: 0;
+                z-index: 1;
+                margin-bottom: rem(72);
+                @include breakpoint($xl) {
+                    position: static;
+                    padding-left: 0;
+                }
+                @include breakpoint($lg) {
+                    display: none;
+                }
+                .mySwiper {
+
+                    .projectCard {
+                        box-sizing: border-box;
+                        background-color: $gray-50;
+                        border: 1px solid $gray-200;
+                        padding: rem(24);
+                        border-radius: rem(20);
+                        cursor: pointer;
+                        &:hover {
+                            background-color: $blue;
+                            border: none;
+                            transition: 0.7s;
+                        }
+                        .card {
+                            .innerCard {
+                                .itemTitle {
+                                    font-family: $jakartaBold;
+                                    font-size: rem(20);
+                                    color: $gray-800;
+                                    line-height: rem(26);
+                                    height: rem(84);
+                                    display: -webkit-box;
+                                    -webkit-line-clamp: 3;
+                                    -webkit-box-orient: vertical;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                }
+                                .dateCategory {
+                                    display: flex;
+                                    gap: rem(8);
+                                    color: $gray-800;
+                                    font-size: rem(14);
+                                    @include breakpoint($xl) {
+                                        display: inline-block;
+                                    }
+                                    .date,
+                                    .category {
+                                        color: $gray-800;
+                                        padding: rem(8) rem(12);
+                                        background-color: $gray-200;
+                                        border-radius: rem(100);
+                                        margin-top: rem(20);
+                                        @include breakpoint($xl) {
+                                            margin-top: rem(10);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &:hover {
+                            .category,
+                            .date {
+                                background-color: $black-gray !important;
+                                color: $white !important;
+                                transition: 0.7s;
+                            }
+                        }
+
+                        &:hover .itemTitle {
+                            color: $white !important;
+                            transition: 0.7s;
+                        }
+
+                    }
+                }
+                
+            }
+        }
+
+    }
+}
+
+:global(.swiper-pagination-bullet) {
+    width: rem(40);
+    height: rem(6);
+    border-radius: rem(100);
+    cursor: pointer;
+  }
+  
+  :global(.swiper-pagination-bullet-active) {
+    background-color: $blue;
+  }

@@ -1,0 +1,167 @@
+import { useCallback, useState } from 'react';
+import useLocalization from '../../../../assets/lang'
+import css from './actions.module.scss'
+import { FaAngleRight } from "react-icons/fa6";
+
+const ActionsComponent = () => {
+  const translate = useLocalization();
+  
+
+  const actionsData = [
+    {
+      id:1,
+      title: 'Vətəndaş',
+      text: 'Orci faucibus consequat a integer aliquet. Mi pharetra porta scelerisque',
+      child: [
+        {
+          logo: '/src/assets/images/statics/citizen-logo1.png',
+          description: 'Dövlət və biznes qurumlarının elektronlaşmış xidmətləri',
+        },
+        {
+          logo: '/src/assets/images/statics/citizen-logo2.png',
+          description: 'Dövlət və biznes qurumlarının elektronlaşmış xidmətləri',
+        },
+        {
+          logo: '/src/assets/images/statics/citizen-logo1.png',
+          description: 'Dövlət və biznes qurumlarının elektronlaşmış xidmətləri',
+        },
+      ]
+    },
+    {
+      id:2,
+      title: 'Fərdi sahibkar',
+      text: 'Orci faucibus consequat a integer aliquet. Mi pharetra porta scelerisque',
+      child: [
+        {
+          logo: '/src/assets/images/statics/citizen-logo1.png',
+          description: 'Dövlət və biznes qurumlarının elektronlaşmış xidmətləri',
+        },
+        {
+          logo: '/src/assets/images/statics/citizen-logo2.png',
+          description: 'Dövlət və biznes qurumlarının elektronlaşmış xidmətləri',
+        },
+        {
+          logo: '/src/assets/images/statics/citizen-logo1.png',
+          description: 'Dövlət və biznes qurumlarının elektronlaşmış xidmətləri',
+        },
+        {
+          logo: '/src/assets/images/statics/citizen-logo2.png',
+          description: 'Dövlət və biznes qurumlarının elektronlaşmış xidmətləri',
+        },
+        {
+          logo: '/src/assets/images/statics/citizen-logo1.png',
+          description: 'Dövlət və biznes qurumlarının elektronlaşmış xidmətləri',
+        },
+        {
+          logo: '/src/assets/images/statics/citizen-logo2.png',
+          description: 'Dövlət və biznes qurumlarının elektronlaşmış xidmətləri',
+        },
+      ]
+    },
+    {
+      id:3,
+      title: 'Hüquqi şəxs',
+      text: 'Orci faucibus consequat a integer aliquet. Mi pharetra porta scelerisque',
+      child: [
+        {
+          logo: '/src/assets/images/statics/citizen-logo2.png',
+          description: 'Dövlət və biznes qurumlarının elektronlaşmış xidmətləri',
+        },
+        {
+          logo: '/src/assets/images/statics/citizen-logo1.png',
+          description: 'Dövlət və biznes qurumlarının elektronlaşmış xidmətləri',
+        },
+        {
+          logo: '/src/assets/images/statics/citizen-logo2.png',
+          description: 'Dövlət və biznes qurumlarının elektronlaşmış xidmətləri',
+        }
+      ]
+    },
+    {
+      id:4,
+      title: 'Dövlət qurumları',
+      text: 'Orci faucibus consequat a integer aliquet. Mi pharetra porta scelerisque',
+      child: [
+        {
+          logo: '/src/assets/images/statics/citizen-logo1.png',
+          description: 'Dövlət və biznes qurumlarının elektronlaşmış xidmətləri',
+        },
+      ]
+    },
+  ]
+
+    const [activeItem, setActiveItem] = useState(actionsData[0]);
+
+    const leftItemClickFunc = useCallback((item) => {
+      setActiveItem(item)
+    }, [])
+  return (
+    <div className="container-fluid">
+      <section>
+        <div className={css.actions}>
+          <div className="container">
+            <div className={css.actionsContainer}>
+              <div className={css.heading}>
+                <h2>{translate('actions_heading')}</h2>
+                <div className={css.lineDescription}>
+                  <div className={css.headingRight}>
+                    <span className={css.headingLine}></span>
+                    <span className={css.description}>{translate('actions_description')}</span>
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                {/* Left Side */}
+                <div className="col-lg-5">
+                  {actionsData.map((item) => (
+                    <div
+                      key={item.id}
+                      className={`${css.main} ${activeItem?.id === item.id ? css.active : ''}`}
+                      onMouseEnter={() => setActiveItem(item)}
+                      onClick={() => leftItemClickFunc(item)}
+                    >
+                      <div className={css.left}>
+                        <div className={css.card}>
+                          <div className={css.cardInner}>
+                            <p>{item.title}</p>
+                            <span>{item.text}</span>
+                          </div>
+                          <i><FaAngleRight /></i>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Right Side */}
+                <div className="col-lg-7">
+                  <div className={css.right}>
+                    {activeItem ? (
+                      activeItem.child.map((childItem, index) => (
+                        <div key={index} className={css.childCard}>
+                          <div>
+                            <div className={css.img}>
+                              <img src={childItem.logo} alt="Logo" className={css.logo} />
+                            </div>
+                            <p>{childItem.description}</p>
+                          </div>
+                          <i><FaAngleRight /></i>
+                        </div>
+                      ))
+                    ) : (
+                      <div className={css.placeholder}>
+                        <p>.</p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+export default ActionsComponent

@@ -1,0 +1,120 @@
+@import '/src/assets/styles/style.scss';
+
+.navbar {
+    box-sizing: border-box;
+    .navbarContainer {
+        .navList {
+            display: flex;
+            gap: rem(16);
+            width: 100%;
+            padding: rem(16) rem(24);
+            border-radius: rem(48);
+            border: 1px solid $white-border-opacity;
+            position: relative;
+            .navListContainer {
+                
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                .navItem {
+                    color: $header-text-color;
+                    padding: rem(8);
+                    cursor: pointer;
+                    &.activeNavItem {
+                        color: $white;
+                    }
+                    .dropdown {
+                        // position: relative;
+                        width: 100%;
+                    }
+    
+                    .dropdownContainer {
+                        // display: none;
+                        position: absolute;
+                        background-image: url('/src/assets/images/statics/dropdown-img.png');
+                        background-repeat: no-repeat;
+                        background-position: right bottom;
+                        top: calc(100% + rem(8));
+                        left:0;
+                        border: 1px solid $white-border-opacity;
+                        border-radius: rem(32);
+                        background-color: $header-bg;
+                        padding: rem(12);
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                        z-index: 10;
+                        color: black;
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        .dropdownRow {
+                            border-right: 1px solid $gray-800;
+                            padding-right: rem(30);
+                            &:last-child {
+                                border-right: none;
+                                padding-right: rem(0);
+                            }
+                            .dropdownItem {
+                                margin-top: rem(4);
+                                .dropdownPair {
+                                    display: flex;
+                                    align-items: center;
+                                    margin-bottom: rem(4);
+                                    padding: rem(4) rem(12);
+                                    .dropdownIcon {
+                                        background-color: $gray-20;
+                                        padding: rem(8);
+                                        border-radius: rem(8);
+                                        margin-right: rem(8);
+                                        
+                                    }
+                                    .textDescription {
+                                        margin-bottom: rem(4);
+                                        padding: rem(8);
+                                        .dropText {
+                                            color: $white;
+                                            font-size: rem(15);
+                                            margin-bottom: rem(2);
+                                        }
+                                        .dropDescription {
+                                            color: $gray-400;
+                                            font-size: rem(12);
+                                        }
+                                    }
+                                }
+                                &:hover .dropdownIcon {
+                                    background: radial-gradient(rgba(0, 67, 206, 1), rgba(0, 45, 156, 1));
+                                    backdrop-filter: blur(12px);
+                                }
+                                &:hover  {
+                                    background-color: $gray-20;
+                                    border-radius: rem(16);
+                                }
+                            }
+                        }
+                        // .dropdownItem {
+                        //     color: $header-text-color;
+                        //     padding: rem(8) rem(16);
+                        //     cursor: pointer;
+    
+                        //     &:hover {
+                        //         // background-color: $dropdown-hover-bg;
+                        //     }
+                        // }
+                    }
+                    
+                }
+                .activeCircle {
+                    width: rem(4); 
+                    height: rem(4);
+                    background-color: $white;
+                    position: absolute;
+                    bottom: rem(15);
+                }
+
+            }
+        }
+    }
+}
+
+

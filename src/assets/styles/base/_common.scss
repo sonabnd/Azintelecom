@@ -1,0 +1,59 @@
+  body {
+    overflow-x: hidden;
+    color: $common-text-color;
+    background-color: $body-bg-color;
+    font-family: $fontMain;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  img {
+    max-width: 100%;
+    vertical-align: middle;
+  }
+  
+  @include breakpoint($lg) {
+    html {
+      font-size: 15px;
+    }
+  }
+  
+  @include breakpoint($md) {
+    html {
+      font-size: 14px;
+    }
+  }
+  
+  @include breakpoint($sm) {
+    html {
+      font-size: 13px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .container {
+      max-width: 1240px;
+    }
+  }
+  // @media (max-width: 576px) {
+  //   .container-fluid {
+  //     // width: 100%; /* Let it span the full width */
+  //     // max-width: none; /* Remove the fixed max-width */
+  //     padding: 0; /* Remove padding */
+  //     margin: 0 auto; /* Center align if necessary */
+  //   }
+  //   .container {
+  //     // width: 100%; /* Let it span the full width */
+  //     // max-width: none; /* Remove the fixed max-width */
+  //     padding: 0; /* Remove padding */
+  //     // margin: 0 auto; /* Center align if necessary */
+  //   }
+  // }

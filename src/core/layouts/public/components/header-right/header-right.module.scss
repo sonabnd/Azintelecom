@@ -1,0 +1,42 @@
+@import '/src/assets/styles/style.scss';
+
+.rightContainer {
+    display: flex;
+    padding: rem(8) rem(0) rem(8) rem(14);
+
+    .selectContainer {
+        border-radius: rem(12);
+        border: 1px solid $gray-600;
+        margin-right: rem(12);
+        padding-right: rem(6);
+        select {
+            padding: rem(13) rem(10);
+            background: none;
+            border: none;
+            outline: none;
+            font-size: 14px;
+            cursor: pointer;
+            color: $white;
+        
+            option {
+                color: black;
+                border-radius: 50%;
+                outline: none;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 120px;
+                cursor: pointer;
+                text-align: center;
+            }
+        }
+    }
+    .category {
+        padding: rem(10);
+        border-radius: rem(12);
+        border: 1px solid $gray-600;
+        cursor: pointer;
+    }
+}

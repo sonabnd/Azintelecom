@@ -1,0 +1,47 @@
+@import '/src/assets/styles/style.scss';
+
+.header {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    background-color: $header-bg;
+    .headerContainer {
+        padding: rem(20) rem(40);
+        display: flex;
+        justify-content: space-between;
+        .logo {
+            cursor: pointer;
+        }
+        .navbar {
+            @include breakpoint($lg) {
+                display: none;
+            }
+        }
+        .right {
+            @include breakpoint($lg) {
+                display: none;
+            }
+        }
+        .hamburgerMenu {
+            display: none;
+            width: rem(40);
+            height: rem(40);
+            img {
+                width: 100%;
+                height: 100%;
+            }
+            @include breakpoint($lg) {
+                display: block;
+            }
+        }
+    }
+}
+
+.hamburgerMenuWrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+  }

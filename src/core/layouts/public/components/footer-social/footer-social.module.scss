@@ -1,0 +1,10 @@
+@import '/src/assets/styles/style.scss';
+
+.social {
+    display: flex;
+    gap: rem(24);
+    .img {
+        width: rem(20);
+        height: rem(20);
+    }
+}

@@ -1,0 +1,30 @@
+@import '/src/assets/styles/style.scss';
+
+.location {
+    .paragraph {
+        &:last-child {
+            margin-top: rem(32);
+        }
+        .inner {
+            display: flex;
+            align-items: center;
+            img {
+                width: rem(24);
+                height: rem(24);
+                margin-right: rem(12);
+                @include breakpoint($md) {
+                    display: none;
+                }
+            }
+            span {
+                font-size: rem (18);
+                line-height: rem(24);
+                width: 50%;
+                display: inline-block;
+                @include breakpoint($lg) {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

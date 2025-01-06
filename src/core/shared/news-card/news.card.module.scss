@@ -1,0 +1,56 @@
+@import '/src/assets/styles/style.scss';
+
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: #1a1b2f; // Replace with your desired background color
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  
+    &.left {
+      grid-column: span 2; // Makes the left card larger
+      aspect-ratio: 2 / 1; // Adjust size for left card
+    }
+  
+    &.right {
+      grid-column: span 1; // Normal size for right cards
+      aspect-ratio: 4 / 3; // Adjust size for right cards
+    }
+  
+    .inner {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .img {
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+    }
+  
+    .description {
+      padding: 16px;
+      color: #fff;
+  
+      .heading {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 8px;
+  
+        span:first-child {
+          font-weight: bold;
+        }
+      }
+  
+      p {
+        margin: 0;
+        font-size: 14px;
+      }
+    }
+  }
+  

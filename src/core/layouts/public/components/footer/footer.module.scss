@@ -1,0 +1,133 @@
+@import '/src/assets/styles/style.scss';
+
+.footer {
+    margin-top: rem(24);
+    margin-bottom: rem(24);
+    .bottom {
+        padding-top: rem(120);
+        background-image: url('/src/assets/images/statics/footer-bg.png');
+        background-color: rgba(255, 255, 255, 0.03);
+        border-radius: rem(48);
+        @include breakpoint($md) {
+            padding-top: rem(32);
+        }
+        .bottomContainer {
+            .bottomInner {
+                .heading {
+                    padding-bottom: rem(72);
+                    @include breakpoint($lg) {
+                        padding-bottom: rem(24);
+                    }
+                    h2 {
+                        font-size: rem($heading);
+                        color: $white;
+                        font-family: $jakartaBold;
+                        font-feature-settings: "ss03";
+                        width: 55%;
+                        line-height: rem(56);
+                        @include breakpoint($lg) {
+                            width: 100%;
+                        }
+                        @include breakpoint($md) {
+                            font-size: rem(24);
+                            line-height: rem(32);
+                        }
+                    }
+                }
+                .main {
+                    padding-top: rem(72);
+                    padding-bottom: rem(72);
+                    border-top: 1px solid $gray-700;
+                    border-bottom: 1px solid $gray-700;
+                    .innerMain {
+                        display: flex;
+                        gap: rem(166);
+                        font-family: $jakartaMedium;
+                        @include breakpoint($lg) {
+                            gap: rem(100);
+                        }
+                        @include breakpoint($md) {
+                            gap: rem(30);
+                        }
+                        .footerList {
+                            display: flex;
+                            @include breakpoint($lg) {
+                                flex-direction: column;
+                            }
+                            .list {
+                                &:last-child {
+                                    margin-left: rem(40);
+                                    @include breakpoint($lg) {
+                                        margin-left: 0;
+                                    }
+                                }
+                                li {
+                                    margin-top: rem(32);
+                                    &:first-child {
+                                        margin-top: 0;
+                                    }
+                                }
+                            }
+                        }
+                        .locationContact {
+                            display: flex;
+                            justify-content: space-between;
+                            @include  breakpoint($lg) {
+                                flex-direction: column;
+                            }
+                            .location {
+                            }
+                            .contactSocial {
+                                @include breakpoint($lg) {
+                                    margin-top: rem(24);
+                                    font-size: rem(14);
+                                }
+                                .contact {
+
+                                }
+                                .social {
+                                    margin-top: rem(16);
+                                    @include breakpoint($lg) {
+                                        display: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .mobileSocial {
+                    display: none;
+                    @include breakpoint($lg) {
+                        display: flex;
+                        justify-content: center;
+                        margin-top: rem(25);
+                    }
+                }
+                .author {
+                    color: $gray-400;
+                    font-size: rem(15);
+                    display: flex;
+                    justify-content: space-between;
+                    padding-top: rem(32);
+                    padding-bottom: rem(32);
+                    @include breakpoint($lg) {
+                        justify-content: center;
+                    }
+                    .left {
+
+                    }
+                    .right {
+                        @include breakpoint($lg) {
+                            display: none;
+                        }
+                        .projectName {
+                            font-family: $jakartaBold;
+                            margin-right: rem(12);
+                            margin-left: rem(12);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
