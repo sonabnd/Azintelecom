@@ -115,9 +115,9 @@ const ActionsComponent = () => {
                   </div>
                 </div>
               </div>
-              <div style={{ flexWrap: 'nowrap' }} className="row">
+              <div style={{ flexWrap: 'nowrap' }} className='row'>
 
-                <div className={`'col-lg-5' ${activeRight ? css.nicat2 : ''}`}>
+                <div className={`col-lg-5 ${activeRight ? css.nicat2 : ''}`}>
                   {actionsData.map((item) => (
                     <div
                       key={item.id}

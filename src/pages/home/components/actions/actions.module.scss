@@ -88,16 +88,25 @@
     .right {
       position: relative;
       margin-left: rem(80);
-      padding: rem(30);
+      padding: rem(30) rem(20) rem(30) 0;
       border: rem(4) solid $blue;
       border-radius: rem(40);
       z-index: 6;
+      box-sizing: border-box;
+      // z-index: 10;
       @include breakpoint($lg) {
+        // border: none;
+        // padding: none;
+        margin-left: 0;
         border: none;
-        padding: none;
+        padding: 0;
       }
       .close {
         align-items: center;
+        display: none;
+        @include breakpoint($lg) {
+          display: block;
+        }
         img {
           @include breakpoint($lg) {
             width: rem(52);
@@ -112,17 +121,20 @@
       }
       .rightContainer {
         position: relative;
-        height: rem(550);
+        height: rem(500);
         overflow-y: auto;
         // border: 1px solid #ddd;
         // background-color: #f9f9f9;
         border-radius: rem(40);
-        padding: 15px;
-        padding: rem(40) rem(40) 0 rem(32);
+        padding: rem(10) rem(20) 0 rem(32);
 
         @include breakpoint($lg) {
-          border: none;
-          background-color: none;
+          padding: 0;
+          overflow: hidden;
+          height: auto;
+          // overflow: hidden;
+          // border: none;
+          // background-color: none;
         }
 
         &::-webkit-scrollbar {
@@ -222,7 +234,9 @@
     }
 
     .left {
+      background-color: red;
       width: 100%;
+      display: inline-block;
       // @include breakpoint($lg){
       //   width: 100%;
       // }
