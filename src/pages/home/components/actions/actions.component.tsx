@@ -2,14 +2,15 @@ import { useCallback, useState } from 'react';
 import useLocalization from '../../../../assets/lang'
 import css from './actions.module.scss'
 import { FaAngleRight } from "react-icons/fa6";
+import backIcon from '/src/assets/images/icons/back-icon.png';
 
 const ActionsComponent = () => {
   const translate = useLocalization();
-  
+
 
   const actionsData = [
     {
-      id:1,
+      id: 1,
       title: 'Vətəndaş',
       text: 'Orci faucibus consequat a integer aliquet. Mi pharetra porta scelerisque',
       child: [
@@ -28,7 +29,7 @@ const ActionsComponent = () => {
       ]
     },
     {
-      id:2,
+      id: 2,
       title: 'Fərdi sahibkar',
       text: 'Orci faucibus consequat a integer aliquet. Mi pharetra porta scelerisque',
       child: [
@@ -59,7 +60,7 @@ const ActionsComponent = () => {
       ]
     },
     {
-      id:3,
+      id: 3,
       title: 'Hüquqi şəxs',
       text: 'Orci faucibus consequat a integer aliquet. Mi pharetra porta scelerisque',
       child: [
@@ -78,7 +79,7 @@ const ActionsComponent = () => {
       ]
     },
     {
-      id:4,
+      id: 4,
       title: 'Dövlət qurumları',
       text: 'Orci faucibus consequat a integer aliquet. Mi pharetra porta scelerisque',
       child: [
@@ -90,11 +91,15 @@ const ActionsComponent = () => {
     },
   ]
 
-    const [activeItem, setActiveItem] = useState(actionsData[0]);
+  const [activeItem, setActiveItem] = useState(actionsData[0]);
+  const [activeRight, setActiveRight] = useState(false)
 
-    const leftItemClickFunc = useCallback((item) => {
-      setActiveItem(item)
-    }, [])
+  const leftItemClickFunc = useCallback((item) => {
+    if (innerWidth < 991) {
+      setActiveRight(true)
+    }
+    setActiveItem(item)
+  }, [])
   return (
     <div className="container-fluid">
       <section>
@@ -110,9 +115,9 @@ const ActionsComponent = () => {
                   </div>
                 </div>
               </div>
-              <div className="row">
+              <div style={{ flexWrap: 'nowrap' }} className="row">
 
-                <div className="col-lg-5">
+                <div className={`'col-lg-5' ${activeRight ? css.nicat2 : ''}`}>
                   {actionsData.map((item) => (
                     <div
                       key={item.id}
@@ -133,15 +138,21 @@ const ActionsComponent = () => {
                   ))}
                 </div>
 
-                <div className="col-lg-7">
+                <div
+                  className={`col-lg-7 ${css.nicat} ${activeRight ? css.visibilityRight : ''}`}
+                >
                   <div className={css.right}>
+                    <div className={css.close} onClick={() => { setActiveRight(false) }}>
+                      <img src={backIcon} alt={translate('img_alt')} />
+                      <span className={css.back}>{translate('back')}</span>
+                    </div>
                     <div className={css.rightContainer}>
                       {activeItem ? (
                         activeItem.child.map((childItem, index) => (
                           <div key={index} className={css.childCard}>
                             <div>
                               <div className={css.img}>
-                                <img src={childItem.logo} alt="Logo" className={css.logo} />
+                                <img src={childItem.logo} alt={translate('img_alt')} className={css.logo} />
                               </div>
                               <p>{childItem.description}</p>
                             </div>

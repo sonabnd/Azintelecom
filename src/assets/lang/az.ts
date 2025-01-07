@@ -22,7 +22,7 @@ export const az = {
     // Actions
     actions_heading: 'Fəaliyyət istiqamətlərimiz',
     actions_description: 'Gələcəyin formalaşmasına şahid olun',
-    
+    back: 'Geri',
     // News
     news_heading: 'Xəbərlər',
     news_goTo: 'Bütün xəbərlərə bax',

@@ -17,15 +17,15 @@ const HeaderComponent = () => {
     setIsMenuOpen((prev) => !prev)
   }, [isMenuOpen])
 
-  const hamburgerMenuFunc = useCallback(() => {
-    setIsHamburgerMenu(true);
-    console.log("salam");
-  }, []);
+  // const hamburgerMenuFunc = useCallback(() => {
+  //   setIsHamburgerMenu((prev) => !prev)
+  //   console.log("nicat get");
+  // }, []);
 
-  const closeMenuFunc = useCallback(() => {
-    console.log("sagol");
-    setIsHamburgerMenu(false);
-  }, []);
+  // const closeMenuFunc = useCallback(() => {
+  //   console.log("sagol");
+  //   setIsHamburgerMenu(false);
+  // }, []);
 
   const navData = [
     {
@@ -114,11 +114,11 @@ const HeaderComponent = () => {
               <div className={css.right}>
                 <HeaderRightComponent toggleMenu={toggleMenu} />
               </div>
-              <div className={css.hamburgerMenu}>
+              <div onClick={() => { setIsHamburgerMenu(!isHamburgerMenu) }} className={css.hamburgerMenu}>
                 {!isHamburgerMenu ? (
-                  <img src={hamburgerMenu} alt='' onClick={hamburgerMenuFunc} />
+                  <img src={hamburgerMenu} alt='' onClick={() => { setIsHamburgerMenu(true) }} />
                 ) : (
-                  <img src={closeMenu} alt='' onClick={closeMenuFunc} />
+                  <img src={closeMenu} alt='' onClick={() => { setIsHamburgerMenu(false) }} />
                 )}
               </div>
             </div>
