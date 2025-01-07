@@ -2,7 +2,7 @@
 
 .hamburgerMenu {
     position: fixed;
-    top: 0;
+    top: rem(70);
     left: 0;
     width: 100vw;
     height: 100vh;
@@ -11,6 +11,10 @@
     background-image: url('/src/assets/images/statics/dropdown-img.png');
     background-repeat: no-repeat;
     background-position: right bottom;
+    display: none;
+    @include breakpoint($lg) {
+        display: block;
+    }
     .list {
         .listItem {
             border-left: rem(4) solid $gray-20;

@@ -1,15 +1,13 @@
 import css from './navbar.module.scss';
-import { az } from '../../../../../assets/lang/az';
 import  { useCallback, useState } from 'react';
 
-const NavbarComponent = ({data}) => {
+const NavbarComponent = ({data}: any) => {
   const [activeDropdown, setActiveDropdown] = useState(null);
 
   const handleDropdown = useCallback((index: any) => {
       setActiveDropdown(activeDropdown === index ? null : index);
   },[activeDropdown]);
 
-  
 
   const chunkArray = (array: any[], size: number) => {
     const chunks = [];

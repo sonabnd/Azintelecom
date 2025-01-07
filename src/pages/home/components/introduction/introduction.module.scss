@@ -19,9 +19,10 @@
                 font-feature-settings: "ss03";
             }
             .digitalFuture {
-                color: $intro-gradient-text-color;
                 font-family: $jakartaExtraBold;
-                
+                background: radial-gradient(79.02% 175.6% at 0% 50%, #FFFFFF 30%, #4B5565 100%);
+                background-clip: text;
+                color: transparent;
             }
         }
     }

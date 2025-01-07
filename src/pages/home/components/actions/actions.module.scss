@@ -1,246 +1,267 @@
 @import '/src/assets//styles/style.scss';
 
 .actions {
-    background-color: $white;
-    padding-top: rem(120);
-    padding-bottom: rem(120);
-    border-radius: rem($container-radius);
-    margin-top: rem(24);
-    @include breakpoint($lg) {
-      padding-top: rem(64);
-      padding-bottom: rem(64);
-    }
-    .actionsContainer {
-        .heading {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: rem(48);
-            flex-direction: column;
-            align-items: flex-start;
+  background-color: $white;
+  padding-top: rem(120);
+  padding-bottom: rem(120);
+  border-radius: rem($container-radius);
+  margin-top: rem(24);
+  background-image: url('/src/assets/images/statics/actions-bg.png');
+  background-repeat: no-repeat;
+
+  @include breakpoint($lg) {
+    padding-top: rem(64);
+    padding-bottom: rem(64);
+  }
+
+  .actionsContainer {
+    .heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: rem(48);
+      flex-direction: column;
+      align-items: flex-start;
+
+      @include breakpoint($lg) {
+        margin-bottom: rem(40);
+      }
+
+      h2 {
+        font-size: rem($heading);
+        background: linear-gradient(90deg, #121926, #697586);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        @include breakpoint($lg) {
+          margin-bottom: rem(16);
+          background: linear-gradient(90deg, #121212 0%, #444444 100%);
+          -webkit-background-clip: text;
+        }
+
+        @include breakpoint($md) {
+          font-size: rem(24);
+
+        }
+      }
+
+      .lineDescription {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+
+        .headingRight {
+          display: flex;
+          align-items: center;
+
+          @include breakpoint($lg) {
+            background: radial-gradient(50% 50% at 50% 59.37%, #090909 0%, #616161 100%);
+            -webkit-background-clip: text;
+          }
+
+          .description {
+            background: radial-gradient(50% 50% at 50% 59.37%, #090909 0%, #616161 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
             @include breakpoint($lg) {
-              margin-bottom: rem(40);
+              font-size: rem(14);
             }
-            h2 {
-                font-size: rem($heading);
-                background: linear-gradient(90deg, #121926 , #697586);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                @include breakpoint($lg) {
-                  margin-bottom: rem(16);
-                  background: linear-gradient(90deg, #121212 0%, #444444 100%);
-                  -webkit-background-clip: text; 
-                }
-                @include breakpoint($md) {
-                  font-size: rem(24);
+          }
 
-                }
-            }
-            .lineDescription {
-              width: 100%;
-              display: flex;
-              justify-content: flex-end;
-              .headingRight {
-                  display: flex;
-                  align-items: center;
-                  @include breakpoint($lg) {
-                    background: radial-gradient(50% 50% at 50% 59.37%, #090909 0%, #616161 100%);
-                    -webkit-background-clip: text; 
-                  }
-  
-                  .description {
-                      background: radial-gradient(50% 50% at 50% 59.37%, #090909 0%, #616161 100%);
-                      -webkit-background-clip: text;
-                      -webkit-text-fill-color: transparent;
-                      @include breakpoint($lg) {
-                        font-size: rem(14);
-                      }
-                  }
-                  .headingLine {
-                      display: inline-block;
-                      width: rem(160);
-                      height: rem(1);
-                      background-color: $line-color;
-                      margin-right: rem(24);
-                      @include breakpoint($lg) {
-                        width: rem(40);
-                        margin-right: rem(16);
-                      }
-                  }
-              }
-            }
-        }
-        .main {
+          .headingLine {
+            display: inline-block;
+            width: rem(160);
+            height: rem(1);
+            background-color: $line-color;
+            margin-right: rem(24);
 
+            @include breakpoint($lg) {
+              width: rem(40);
+              margin-right: rem(16);
+            }
+          }
         }
+      }
     }
-}
 
-.actionsContainer {
-  
     .right {
       position: relative;
-      height: rem(550) ;
-      overflow-y: auto; 
-      border: 1px solid #ddd;
-      background-color: #f9f9f9;
-      padding: 15px;
+      margin-left: rem(80);
+      padding: rem(30);
       border: rem(4) solid $blue;
       border-radius: rem(40);
-      padding: rem(40) rem(48) 0 rem(32);
-      @include breakpoint($lg) {
-        
-      }
-          /* Scrollbar styling */
-    &::-webkit-scrollbar {
-      width: 8px; /* Adjust the width of the scrollbar */
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background-color: $gray-300; /* Color of the scrollbar thumb */
-      border-radius: 8px; /* Rounding the corners */
-      transition: background-color 0.3s;
-    }
-
-    // &::-webkit-scrollbar-thumb:hover {
-    //   background-color: #555; /* Darker color on hover */
-    // }
-
-    &::-webkit-scrollbar-track {
-      background: $gray-100; /* Background of the track */
-      border-radius: 8px;
-      width: rem(8);
-    }
-
-    /* Smooth scrolling */
-    // scroll-behavior: smooth;
-      .childCard {
+      z-index: 6;
+      .rightContainer {
         position: relative;
-        display: flex;
-        align-items: center;
-        margin-bottom: rem(16);
-        border: rem(1) solid $gray-200;
-        padding: rem(24);
-        border-radius: rem(16);
-        .img {
+        height: rem(550);
+        overflow-y: auto;
+        // border: 1px solid #ddd;
+        // background-color: #f9f9f9;
+        border-radius: rem(40);
+        padding: 15px;
+        padding: rem(40) rem(40) 0 rem(32);
+        @include breakpoint($lg) {
+          border: none;
+          background-color: none;
+        }
+
+        &::-webkit-scrollbar {
+          width: 8px;
+          margin-right: rem(20);
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background-color: $gray-300;
+          border-radius: 8px;
+          transition: background-color 0.3s;
+        }
+
+        &::-webkit-scrollbar-track {
+          background: $gray-100;
+          border-radius: 8px;
+          width: rem(8);
+        }
+
+        .childCard {
+          position: relative;
+          display: flex;
+          align-items: center;
+          margin-bottom: rem(16);
+          border: rem(1) solid $gray-200;
+          padding: rem(24);
+          border-radius: rem(16);
+
+          .img {
             width: rem(240);
             height: rem(60);
             margin-top: rem(12);
+
             .logo {
               object-fit: cover;
 
             }
-        }
-  
-        p {
-          margin: 0;
-          font-size: rem(16);
-          color: $gray-500;
-        }
+          }
 
-        i {
+          p {
+            margin: 0;
+            font-size: rem(16);
+            color: $gray-500;
+          }
+
+          i {
             position: absolute;
             color: $gray-500;
             font-size: rem(24);
             right: rem(24);
+          }
+        }
+
+        .placeholder {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+          color: #999;
+          font-size: 16px;
+          font-style: italic;
         }
       }
-  
-      .placeholder {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        color: #999;
-        font-size: 16px;
-        font-style: italic;
+      &::before {
+        content: "";
+        position: absolute;
+        background-color: rgba(205, 213, 223, 0.34);
+        top: rem(89);
+        width: rem(24);
+        height: rem(404);
+        left: rem(-27);
+        border-radius: rem(20);
+        top: rem(50);
+        bottom: rem(50);
+        height: calc(100% - rem(100)); 
+        border-top-left-radius: rem(20);
+        border-bottom-left-radius: rem(20);
       }
+      &::after{
+        background: rgba(205, 213, 223, .16);
+        height: calc(100% - 180px);
+        left: rem(-44);
+        // top: 90px;
+        content: "";
+        position: absolute;
+        width: rem(24);
+        height: rem(482);
+        top: rem(89); 
+        bottom: rem(89); 
+        height: calc(100% - rem(178)); 
+        border-top-left-radius: rem(20);
+        border-bottom-left-radius: rem(20);
+      }
+
     }
 
     .left {
-        width: 100%;
+      width: 100%;
+
       .card {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        cursor: pointer;
+
         .cardInner {
           transition: background-color 0.3s ease;
           padding: rem(24) rem(32) rem(24) 0;
           border-top-right-radius: rem(16);
           border-bottom-right-radius: rem(16);
+
           @include breakpoint($lg) {
             padding: rem(16) rem(24) rem(16) 0;
           }
+
           &:hover {
-              border-left: rem(4) solid $blue-600;
-              background-color: $gray-50;
-              padding-left: rem(32);
-              transition: 0.4s;
+            border-left: rem(4) solid $blue-600;
+            background-color: $gray-50;
+            padding-left: rem(32);
+            transition: 0.4s;
           }
+
           p {
-              font-size: rem(24);
-              font-family: $jakartaSemiBold;
-              color: $gray-800;
-              line-height: rem(32);
-              margin-bottom: rem(8);
-              @include breakpoint($md) {
-                font-size: rem(18);
-                color: $gray-900;
-              }
+            font-size: rem(24);
+            font-family: $jakartaSemiBold;
+            color: $gray-800;
+            line-height: rem(32);
+            margin-bottom: rem(8);
+
+            @include breakpoint($md) {
+              font-size: rem(18);
+              color: $gray-900;
+            }
           }
+
           span {
-              color: $gray-500;
-              font-size: rem(16);
-              line-height: rem(24);
-              @include breakpoint($md) {
-                font-size: rem(14);
-                color: $gray-800;
-              }
+            color: $gray-500;
+            font-size: rem(16);
+            line-height: rem(24);
+
+            @include breakpoint($md) {
+              font-size: rem(14);
+              color: $gray-800;
+            }
           }
         }
+
         i {
           font-size: rem(24);
           color: $gray-300;
           display: none;
+
           @include breakpoint($lg) {
             display: block;
           }
         }
       }
     }
+
+  }
 }
-
-
-// .actionsContainer {
-//   .backButton {
-//     display: block;
-//     margin-bottom: 16px;
-//     background-color: $blue;
-//     color: $white;
-//     border: none;
-//     padding: 8px 16px;
-//     border-radius: 4px;
-//     font-size: 16px;
-//     cursor: pointer;
-
-//     &:hover {
-//       background-color: darken($blue, 10%);
-//     }
-//   }
-// }
-
-
-// @media (max-width: 991px) {
-//   .left {
-//     display: block;
-//   }
-//   .right {
-//     display: none;
-//   }
-// }
-
-
-// .dNone {
-//   display: none !important;
-// }
-

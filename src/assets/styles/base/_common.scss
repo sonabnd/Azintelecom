@@ -38,22 +38,10 @@
     }
   }
   
-  @media (min-width: 1200px) {
-    .container {
-      max-width: 1240px;
-    }
+
+@media (max-width: 991px) {
+  .container-fluid {
+    padding-right: 0; 
+    padding-left: 0;
   }
-  // @media (max-width: 576px) {
-  //   .container-fluid {
-  //     // width: 100%; /* Let it span the full width */
-  //     // max-width: none; /* Remove the fixed max-width */
-  //     padding: 0; /* Remove padding */
-  //     margin: 0 auto; /* Center align if necessary */
-  //   }
-  //   .container {
-  //     // width: 100%; /* Let it span the full width */
-  //     // max-width: none; /* Remove the fixed max-width */
-  //     padding: 0; /* Remove padding */
-  //     // margin: 0 auto; /* Center align if necessary */
-  //   }
-  // }
+}

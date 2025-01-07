@@ -111,7 +111,7 @@ const ActionsComponent = () => {
                 </div>
               </div>
               <div className="row">
-                {/* Left Side */}
+
                 <div className="col-lg-5">
                   {actionsData.map((item) => (
                     <div
@@ -133,26 +133,27 @@ const ActionsComponent = () => {
                   ))}
                 </div>
 
-                {/* Right Side */}
                 <div className="col-lg-7">
                   <div className={css.right}>
-                    {activeItem ? (
-                      activeItem.child.map((childItem, index) => (
-                        <div key={index} className={css.childCard}>
-                          <div>
-                            <div className={css.img}>
-                              <img src={childItem.logo} alt="Logo" className={css.logo} />
+                    <div className={css.rightContainer}>
+                      {activeItem ? (
+                        activeItem.child.map((childItem, index) => (
+                          <div key={index} className={css.childCard}>
+                            <div>
+                              <div className={css.img}>
+                                <img src={childItem.logo} alt="Logo" className={css.logo} />
+                              </div>
+                              <p>{childItem.description}</p>
                             </div>
-                            <p>{childItem.description}</p>
+                            <i><FaAngleRight /></i>
                           </div>
-                          <i><FaAngleRight /></i>
+                        ))
+                      ) : (
+                        <div className={css.placeholder}>
+                          <p>.</p>
                         </div>
-                      ))
-                    ) : (
-                      <div className={css.placeholder}>
-                        <p>.</p>
-                      </div>
-                    )}
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -165,3 +166,4 @@ const ActionsComponent = () => {
 }
 
 export default ActionsComponent
+

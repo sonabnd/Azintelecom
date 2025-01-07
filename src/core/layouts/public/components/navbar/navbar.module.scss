@@ -25,12 +25,10 @@
                         color: $white;
                     }
                     .dropdown {
-                        // position: relative;
                         width: 100%;
                     }
     
                     .dropdownContainer {
-                        // display: none;
                         position: absolute;
                         background-image: url('/src/assets/images/statics/dropdown-img.png');
                         background-repeat: no-repeat;
@@ -92,15 +90,6 @@
                                 }
                             }
                         }
-                        // .dropdownItem {
-                        //     color: $header-text-color;
-                        //     padding: rem(8) rem(16);
-                        //     cursor: pointer;
-    
-                        //     &:hover {
-                        //         // background-color: $dropdown-hover-bg;
-                        //     }
-                        // }
                     }
                     
                 }

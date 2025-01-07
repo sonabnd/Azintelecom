@@ -1,76 +1,3 @@
-// import useLocalization from '../../../../assets/lang'
-// import css from './news.module.scss'
-// import news1 from '/src/assets/images/statics/news-1.jpeg';
-// import news2 from '/src/assets/images/statics/news-2.png';
-// import news3 from '/src/assets/images/statics/news-3.png';
-// import news4 from '/src/assets/images/statics/news-4.png';
-
-// const NewsComponent = () => {
-//     const translate = useLocalization();
-//     const newsData = [
-//         {
-//             id: 1,
-//             img: news1,
-//             date: translate('news_card_date'),
-//             text: translate('news_card_text1'),
-//         },
-//         {
-//             id: 2,
-//             img: news2,
-//             date: translate('news_card_date'),
-//             text: translate('news_card_text2'),
-//         },
-//         {
-//             id: 3,
-//             img: news3,
-//             date: translate('news_card_date'),
-//             text: translate('news_card_text2'),
-//         },
-//         {
-//             id: 4,
-//             img: news4,
-//             date: translate('news_card_date'),
-//             text: translate('news_card_text2'),
-//         },
-//         {
-//             id: 5,
-//             img: news4,
-//             date: translate('news_card_date'),
-//             text: translate('news_card_text2'),
-//         },
-//         {
-//             id: 6,
-//             img: news4,
-//             date: translate('news_card_date'),
-//             text: translate('news_card_text2'),
-//         },
-//     ]
-
-//     return (
-//         <div className="container-fluid">
-//             <section>
-//                 <div className="container">
-//                     <div className={css.news}>
-//                         <div className={css.heading}>
-//                             <h2>{translate('news_heading')}</h2>
-//                             <span>{translate('news_goTo')}</span>
-//                         </div>
-//                         <div className={css.main}>
-//                         {/* This is the place where you will map and write the code that holds 4 divs (newsCard). */}
-//                         </div>
-//                     </div>
-//                 </div>
-//             </section>
-//         </div>
-//     )
-// }
-
-// export default NewsComponent;
-
-
-
-
-
 import useLocalization from '../../../../assets/lang';
 import css from './news.module.scss';
 import news1 from '/src/assets/images/statics/news-1.jpeg';
@@ -127,7 +54,7 @@ const NewsComponent = () => {
                                         </div>
                                         <div className={css.description}>
                                             <div className={css.heading}>
-                                                <span className={css.newsText}>Xeberler</span>
+                                                <span className={css.newsText}>{translate('news_heading')}</span>
                                                 <span className={css.newsDate}>{news.date}</span>
                                             </div>
                                             <p>{news.text}</p>

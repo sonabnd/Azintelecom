@@ -17,92 +17,18 @@
 
 
 
-
-
-
-// .largeMenu {
-//   padding: 20px;
-//   background-color: #1a1a2e;
-//   border-radius: 8px;
-//   color: #fff;
-
-//   .menuContainer {
-//     position: fixed;
-//     right: rem(57);
-//     background-color: $gray-90;
-//     border: 1px solid $white-border-opacity;
-//     border-radius: rem(32);
-//     width: 80%;
-//     top: 110px;
-//     background-image: url('/src/assets/images/statics/dropdown-img.png');
-//     background-repeat: no-repeat;
-//     background-position: right bottom;
-
-//     .categoryContainer {
-//       .title {}
-
-//       .category {
-//         .dropdownItem {
-//           margin-top: rem(4);
-
-//           .dropdownPair {
-//             display: flex;
-//             align-items: center;
-//             margin-bottom: rem(4);
-//             padding: rem(4) rem(12);
-
-//             .dropdownIcon {
-//               background-color: $gray-20;
-//               padding: rem(8);
-//               border-radius: rem(8);
-//               margin-right: rem(8);
-
-//             }
-
-//             .textDescription {
-//               margin-bottom: rem(4);
-//               padding: rem(8);
-
-//               .dropText {
-//                 color: $white;
-//                 font-size: rem(15);
-//                 margin-bottom: rem(2);
-//               }
-
-//               .dropDescription {
-//                 color: $gray-400;
-//                 font-size: rem(12);
-//               }
-//             }
-//           }
-
-//           &:hover .dropdownIcon {
-//             background: radial-gradient(rgba(0, 67, 206, 1), rgba(0, 45, 156, 1));
-//             backdrop-filter: blur(12px);
-//           }
-
-//           &:hover {
-//             background-color: $gray-20;
-//             border-radius: rem(16);
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-
-
 .largeMenu {
-  padding: 20px;
+  padding: 24px;
   background-color: #1a1a2e;
   border-radius: 8px;
   color: #fff;
-
+  @include breakpoint($lg) {
+    display: none;
+  }
   .menuContainer {
     display: grid;
-    grid-template-columns: repeat(4, 4fr); /* 4 sütun */
+    grid-template-columns: repeat(4, 4fr);
     gap: 16px;
-    // align-items: start; /* Hamısını yuxarıdan hizalamaq */
     position: fixed;
     right: rem(57);
     background-color: $gray-90;
@@ -115,15 +41,14 @@
     background-position: right bottom;
   }
 
-  /* Sütunlar üçün */
+
   .column {
     display: flex;
     flex-direction: column;
-    // background-color: #24243e;
     padding: 16px;
     border-radius: 8px;
-    height: 340px; /* Hündürlük bərabər olsun */
-    // background-color: red;
+    height: 340px; 
+    
   }
 
   h3 {
@@ -137,50 +62,42 @@
     padding: 0;
 
     .dropdownItem {
-      display: flex;
-      align-items: center;
-      margin-bottom: 12px;
-      padding: 8px;
-      border-radius: 8px;
-      background-color: #2a2a40;
-
-      &:hover {
-        background-color: #35355a;
-      }
-
+      margin-top: rem(4);
+      cursor: pointer;
       .dropdownPair {
-        display: flex;
-        align-items: center;
-
-        .dropdownIcon {
-          width: 40px;
-          height: 40px;
-          background-color: #414161;
           display: flex;
           align-items: center;
-          justify-content: center;
-          border-radius: 8px;
-          margin-right: 12px;
-
-          img {
-            width: 20px;
-            height: 20px;
+          margin-bottom: rem(4);
+          padding: rem(4) rem(12);
+          .dropdownIcon {
+              background-color: $gray-20;
+              padding: rem(8);
+              border-radius: rem(8);
+              margin-right: rem(8);
+              
           }
-        }
-
-        .textDescription {
-          .dropText {
-            color: #ffffff;
-            font-size: 14px;
-            font-weight: bold;
+          .textDescription {
+              margin-bottom: rem(4);
+              padding: rem(8);
+              .dropText {
+                  color: $white;
+                  font-size: rem(15);
+                  margin-bottom: rem(2);
+              }
+              .dropDescription {
+                  color: $gray-400;
+                  font-size: rem(12);
+              }
           }
-
-          .dropDescription {
-            color: #a1a1b8;
-            font-size: 12px;
-          }
-        }
       }
-    }
+      &:hover .dropdownIcon {
+          background: radial-gradient(rgba(0, 67, 206, 1), rgba(0, 45, 156, 1));
+          backdrop-filter: blur(12px);
+      }
+      &:hover  {
+          background-color: $gray-20;
+          border-radius: rem(16);
+      }
+  }
   }
 }

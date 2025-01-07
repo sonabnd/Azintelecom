@@ -5,6 +5,7 @@ import css from './header.module.scss';
 import logo from '/src/assets/images/statics/azin logo.svg';
 import LargeMenuComponent from '../large-menu/large-menu.component';
 import hamburgerMenu from '/src/assets/images/icons/hamburger-menu.png';
+import closeMenu from '/src/assets/images/icons/x-close.png';
 import { az } from '../../../../../assets/lang/az';
 import HamburgerMenuComponent from '../hamburger-menu/hamburger-menu.component';
 
@@ -17,9 +18,14 @@ const HeaderComponent = () => {
   }, [isMenuOpen])
 
   const hamburgerMenuFunc = useCallback(() => {
-    setIsHamburgerMenu((prev) => !prev);
+    setIsHamburgerMenu(true);
     console.log("salam");
-  }, [isHamburgerMenu])
+  }, []);
+
+  const closeMenuFunc = useCallback(() => {
+    console.log("sagol");
+    setIsHamburgerMenu(false);
+  }, []);
 
   const navData = [
     {
@@ -47,11 +53,11 @@ const HeaderComponent = () => {
       link: az.service,
       path: '/service',
       dropdown: [
-        { id: 1, name: 'SİMA', description: 'A proxy for encrypting sensit...dfghfdsadfghfdsadfghfdsdfghgfdsadfghfdsadfgh', icon: '/src/assets/images/icons/dropdown-icon-2.png' },
         { id: 2, name: 'AzInTelecom Cloud', description: 'A proxy for encrypting sensit...', icon: '/src/assets/images/icons/dropdown-icon-1.png' },
         { id: 3, name: 'Infosystems', description: 'A proxy for encrypting sensit...', icon: '/src/assets/images/icons/dropdown-icon-3.png' },
-        { id: 1, name: 'SİMA', description: 'A proxy for encrypting sensit...dfghfdsadfghfdsadfghfdsdfghgfdsadfghfdsadfgh', icon: '/src/assets/images/icons/dropdown-icon-2.png' },
         { id: 2, name: 'AzInTelecom Cloud', description: 'A proxy for encrypting sensit...', icon: '/src/assets/images/icons/dropdown-icon-1.png' },
+        { id: 3, name: 'Infosystems', description: 'A proxy for encrypting sensit...', icon: '/src/assets/images/icons/dropdown-icon-3.png' },
+        { id: 3, name: 'Infosystems', description: 'A proxy for encrypting sensit...', icon: '/src/assets/images/icons/dropdown-icon-3.png' },
         { id: 3, name: 'Infosystems', description: 'A proxy for encrypting sensit...', icon: '/src/assets/images/icons/dropdown-icon-3.png' },
       ],
     },
@@ -95,33 +101,35 @@ const HeaderComponent = () => {
         </div>
       )}
 
-      {!isHamburgerMenu && (
-        <header>
-          <div className={css.header}>
-            <div className='container-fluid'>
-              <div className={css.headerContainer}>
-                <div className={css.logo}>
-                  <img src={logo} alt='' />
-                </div>
-                <div className={css.navbar}>
-                  <NavbarComponent data={navData} />
-                </div>
-                <div className={css.right}>
-                  <HeaderRightComponent toggleMenu={toggleMenu} />
-                </div>
-                <div className={css.hamburgerMenu} onClick={hamburgerMenuFunc}>
-                  <img src={hamburgerMenu} alt="derf" />
-                </div>
+      <header>
+        <div className={css.header}>
+          <div className='container-fluid'>
+            <div className={css.headerContainer}>
+              <div className={css.logo}>
+                <img src={logo} alt='' />
+              </div>
+              <div className={css.navbar}>
+                <NavbarComponent data={navData} />
+              </div>
+              <div className={css.right}>
+                <HeaderRightComponent toggleMenu={toggleMenu} />
+              </div>
+              <div className={css.hamburgerMenu}>
+                {!isHamburgerMenu ? (
+                  <img src={hamburgerMenu} alt='' onClick={hamburgerMenuFunc} />
+                ) : (
+                  <img src={closeMenu} alt='' onClick={closeMenuFunc} />
+                )}
               </div>
             </div>
           </div>
-          {
-            isMenuOpen ? (
-              <div><LargeMenuComponent data={navData} /></div>
-            ) : <p>.</p>
-          }
-        </header>
-      )}
+        </div>
+        {
+          isMenuOpen && (
+            <div><LargeMenuComponent data={navData} /></div>
+          )
+        }
+      </header>
     </>
   );
 };
