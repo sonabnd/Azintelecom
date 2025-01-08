@@ -5,7 +5,7 @@
   background-color: #1a1a2e;
   border-radius: 8px;
   color: #fff;
-  z-index: 10000;
+  position: static;
   @include breakpoint($lg) {
     display: none;
   }
@@ -31,6 +31,7 @@
       }
     }
     .menuContainer {
+      z-index: 99999;
       display: grid;
       grid-template-columns: repeat(4, 4fr);
       gap: 16px;
@@ -87,8 +88,8 @@
           }
       }
       &:hover .dropdownIcon {
-          background: radial-gradient(rgba(0, 67, 206, 1), rgba(0, 45, 156, 1));
-          backdrop-filter: blur(12px);
+          // background: radial-gradient(rgba(0, 67, 206, 1), rgba(0, 45, 156, 1));
+          // backdrop-filter: blur(12px);
       }
       &:hover  {
           background-color: $gray-20;

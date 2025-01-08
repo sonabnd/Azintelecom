@@ -6,7 +6,7 @@
   padding-bottom: rem(120);
   border-radius: rem($container-radius);
   margin-top: rem(24);
-  background-image: url('/src/assets/images/statics/actions-bg.png');
+  // background-image: url('/src/assets/images/statics/actions-bg.png');
   background-repeat: no-repeat;
 
   @include breakpoint($lg) {

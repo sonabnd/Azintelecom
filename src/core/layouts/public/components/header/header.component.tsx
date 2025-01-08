@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import HeaderRightComponent from '../header-right/header-right.component';
 import NavbarComponent from '../navbar/navbar.component';
 import css from './header.module.scss';
@@ -12,6 +12,20 @@ import HamburgerMenuComponent from '../hamburger-menu/hamburger-menu.component';
 const HeaderComponent = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isHamburgerMenu, setIsHamburgerMenu] = useState(false)
+  const largeMenuRef = useRef(null);
+
+  const handleClickOutside = (event: MouseEvent) => {
+      if (largeMenuRef.current && !largeMenuRef.current.contains(event.target as Node)) {
+        setIsMenuOpen(null);
+      }
+    };
+  
+    useEffect(() => {
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside);
+      };
+    }, []);
 
   const toggleMenu = useCallback(() => {
     setIsMenuOpen((prev) => !prev)
@@ -92,7 +106,7 @@ const HeaderComponent = () => {
       )}
 
       <header>
-        <div className={css.header}>
+        <div className={css.header} ref={largeMenuRef}>
           <div className='container-fluid'>
             <div className={css.headerContainer}>
               <div className={css.logo}>

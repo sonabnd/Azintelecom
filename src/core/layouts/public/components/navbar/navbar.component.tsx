@@ -1,9 +1,10 @@
 import css from './navbar.module.scss';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 const NavbarComponent = ({ data }: any) => {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const dropdownRef = useRef(null);
 
   const handleMouseEnter = (index: any) => {
     setHoveredIndex(index);
@@ -27,8 +28,21 @@ const NavbarComponent = ({ data }: any) => {
     return chunks;
   };
 
+  const handleClickOutside = (event: MouseEvent) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      setActiveDropdown(null);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div className={css.navbar}>
+    <div className={css.navbar} ref={dropdownRef}>
       <div className={css.navbarContainer}>
         <nav>
           <ul className={css.navList}>
