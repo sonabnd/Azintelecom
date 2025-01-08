@@ -8,7 +8,7 @@
   border-radius: rem($container-radius);
   margin-top: rem(24);
   background-repeat: no-repeat;
-
+  z-index: 1;
   &:before {
     content: "";
     background-image: url('/src/assets/images/statics/actions-left.png');
@@ -19,6 +19,7 @@
     background-repeat: no-repeat;
     width: 100%;
     height: 100%;
+    z-index: -1;
   }
 
   &:after {
@@ -31,6 +32,7 @@
     background-repeat: no-repeat;
     width: 100%;
     height: 100%;
+    z-index: -1;
   }
 
   @include breakpoint($lg) {
@@ -115,7 +117,6 @@
       padding: rem(30) rem(20) rem(30) 0;
       border: rem(4) solid $blue;
       border-radius: rem(40);
-      z-index: 6;
       box-sizing: border-box;
       background-color: $white;
 
@@ -251,7 +252,6 @@
         height: calc(100% - rem(100));
         border-top-left-radius: rem(20);
         border-bottom-left-radius: rem(20);
-
         @include breakpoint($lg) {
           display: none;
         }
@@ -268,7 +268,6 @@
         height: calc(100% - rem(178));
         border-top-left-radius: rem(20);
         border-bottom-left-radius: rem(20);
-
         @include breakpoint($lg) {
           display: none;
         }
