@@ -9,7 +9,7 @@
   @include breakpoint($lg) {
     display: none;
   }
-  .closeMenu {
+  .menuContainer {
     position: fixed;
     background-color: $gray-90;
     right: rem(57);
@@ -21,6 +21,7 @@
     background-image: url('/src/assets/images/statics/dropdown-img.png');
     background-repeat: no-repeat;
     background-position: right bottom;
+    z-index: 99999;
     .heading {
       display: flex;
       justify-content: flex-end;

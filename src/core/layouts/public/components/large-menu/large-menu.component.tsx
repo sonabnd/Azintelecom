@@ -5,7 +5,7 @@ const LargeMenuComponent = ({ data, closeMenu }: any) => {
 
   return (
     <div className={css.largeMenu}>
-      <div className={css.closeMenu}>
+      <div className={css.menuContainer}>
         <div className={css.heading}>
           <div className={css.closeContainer} onClick={closeMenu}>
             <img src={close} alt="close" />
