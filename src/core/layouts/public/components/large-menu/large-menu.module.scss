@@ -45,7 +45,11 @@
     padding: 16px;
     border-radius: 8px;
     height: 340px; 
-    
+    transition: .7s;
+    h3 {
+      font-size: rem(16);
+      font-family: $jakartaMedium;
+    }
   }
 
   h3 {
@@ -88,10 +92,10 @@
           }
       }
       &:hover .dropdownIcon {
-          // background: radial-gradient(rgba(0, 67, 206, 1), rgba(0, 45, 156, 1));
-          // backdrop-filter: blur(12px);
+          background: radial-gradient(rgba(0, 67, 206, 1), rgba(0, 45, 156, 1));
+          backdrop-filter: blur(12px);
       }
-      &:hover  {
+      &:hover {
           background-color: $gray-20;
           border-radius: rem(16);
       }
