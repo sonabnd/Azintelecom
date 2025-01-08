@@ -46,6 +46,12 @@
                         z-index: 10;
                         color: black;
                         width: 100%;
+                        .titleName {
+                            color: $gray-500;
+                            margin-left: rem(24);
+                            margin-top: rem(8);
+                            margin-bottom: rem(12);
+                        }
                         .dropdownListContainer {
                             display: flex;
                             justify-content: space-between;
@@ -54,6 +60,8 @@
                                     border-right: 1px solid $gray-800;
                                     padding-right: rem(30);
                                 }
+                                // border-right: none;
+                                // padding-right: rem(0);
                                 .dropdownItem {
                                     margin-top: rem(4);
                                     .dropdownPair {

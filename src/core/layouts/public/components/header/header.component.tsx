@@ -75,7 +75,7 @@ const HeaderComponent = () => {
       dropdown: [
         { id: 1, name: 'Vakansiyalar', description: 'Vakansiyalar desc', icon: '/src/assets/images/icons/dropdown-icon-4.png' },
         { id: 2, name: 'Müraciət', description: 'Müraciət desc', icon: '/src/assets/images/icons/dropdown-icon-2.png' },
-        { id: 3, name: 'Life', description: 'Life az desc', icon: '/src/assets/images/icons/dropdown-icon-1.png' },
+        { id: 2, name: 'AzInTelecom Cloud', description: 'A proxy for encrypting sensit...', icon: '/src/assets/images/icons/dropdown-icon-1.png' },
       ],
     },
     {

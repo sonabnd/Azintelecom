@@ -29,7 +29,10 @@ const NavbarComponent = ({ data }: any) => {
   };
 
   const handleClickOutside = (event: MouseEvent) => {
-    if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+    if (
+      dropdownRef.current &&
+      !dropdownRef.current.contains(event.target as Node)
+    ) {
       setActiveDropdown(null);
     }
   };
@@ -65,7 +68,8 @@ const NavbarComponent = ({ data }: any) => {
                       {activeDropdown === index && (
                         <div>
                           <div className={css.dropdownContainer}>
-                          <ul className={css.dropdownListContainer}>
+                            <p className={css.titleName}>{item.link}</p>
+                            <ul className={css.dropdownListContainer}>
                               {chunkArray(item.dropdown, 3).map(
                                 (chunk, chunkIndex) => (
                                   <div
@@ -80,7 +84,10 @@ const NavbarComponent = ({ data }: any) => {
                                       >
                                         <div className={css.dropdownPair}>
                                           <div className={css.dropdownIcon}>
-                                            <img src={dropdown.icon} alt='img' />
+                                            <img
+                                              src={dropdown.icon}
+                                              alt='img'
+                                            />
                                           </div>
                                           <div className={css.textDescription}>
                                             <p className={css.dropText}>
@@ -96,7 +103,7 @@ const NavbarComponent = ({ data }: any) => {
                                   </div>
                                 )
                               )}
-                          </ul>
+                            </ul>
                           </div>
                         </div>
                       )}
