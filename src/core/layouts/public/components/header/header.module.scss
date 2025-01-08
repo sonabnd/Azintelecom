@@ -12,6 +12,7 @@
         padding: rem(20) rem(40);
         display: flex;
         justify-content: space-between;
+        align-items: center;
         .logo {
             cursor: pointer;
             @include breakpoint($lg) {

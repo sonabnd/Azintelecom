@@ -37,5 +37,14 @@
         border-radius: rem(12);
         border: 1px solid $gray-600;
         cursor: pointer;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        width: rem(44);
+        height: rem(44);
+        img {
+            width: rem(24);
+            height: rem(24);
+        }
     }
 }
