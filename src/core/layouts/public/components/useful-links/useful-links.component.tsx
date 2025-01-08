@@ -3,11 +3,10 @@ import css from './useful-links.module.scss';
 import left from '/src/assets/images/icons/navigate-left.png';
 import right from '/src/assets/images/icons/navigate-right.png';
 import goTo from '/src/assets/images/icons/useful-goTo.png';
-import React, { useCallback, useRef, useState } from 'react';
+import { useCallback, useRef} from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Pagination } from 'swiper/modules';
 import { Navigation } from "swiper/modules";
 
 const UsefulLinksComponent = () => {
@@ -51,6 +50,7 @@ const UsefulLinksComponent = () => {
             link: 'virtualkarabakh.az',
         },
     ];
+
     const translate = useLocalization();
     const swiperRef = useRef(null);
     
@@ -66,8 +66,8 @@ const UsefulLinksComponent = () => {
       };
     }, [])
     return (
-        <div>
-            <div>
+        <div className={css.footerTop}>
+            <div className='container'>
                 <div className={css.inner}>
                     <div className={css.heading}>
                         <h2>{translate('useful_links')}</h2>
@@ -112,7 +112,7 @@ const UsefulLinksComponent = () => {
                                         },
                                     }}
                                 >
-                                    {linkData.map((item, index) => (
+                                    {linkData.map((item) => (
                                         <SwiperSlide key={item.id}>
                                             <div className={css.card} >
                                                 <div className={css.cardInner}>

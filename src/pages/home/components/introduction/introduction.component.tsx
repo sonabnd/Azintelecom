@@ -1,4 +1,3 @@
-
 import useLocalization from '../../../../assets/lang';
 import css from './introduction.module.scss'
 
@@ -11,14 +10,12 @@ const IntroductionComponent = () => {
                     <div className={css.rightLeft}>
                         <div className='container'>
                             <div className='row'>
-                                <div className='col-md-7'>
+                                <div className='col-md-8'>
                                     <div className={css.left}>
-                                        <p>{translate('intro_text1')}</p>
-                                        <p className={css.digitalFuture}>{translate('intro_text2')}</p>
-                                        <p>{translate('intro_text3')}</p>
+                                        <h1>{translate('intro_text1')} <span>{translate('intro_text2')}</span> {translate('intro_text3')} </h1>
                                     </div>
                                 </div>
-                                <div className='col-md-5'>
+                                <div className='col-md-4'>
                                     <div className={css.right}>
                                     </div>
                                 </div>

@@ -1,244 +1,325 @@
 @import '/src/assets/styles/style.scss';
+.newsContainer {
+  position: relative;
+  &::before {
+    content: ''; /* Pseudo-elementi aktiv edir */
+    background-image: url('/src/assets/images/statics/news-left-bg.png');
+    background-position: 0 ;
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
 
-// .news {
-//     margin-top: rem(24);
-//     padding: rem(120) 0;
-
-//     .heading {
-//       display: flex;
-//       justify-content: space-between;
-//       align-items: center;
-
-//       h2 {
-//         font-size: rem($heading);
-//         background: linear-gradient(90deg, $white, #697586);
-//         -webkit-background-clip: text;
-//         -webkit-text-fill-color: transparent;
-//         font-feature-settings: "ss03";
-//         font-family: $jakartaBold;
-//       }
-
-//       span {
-//         background: radial-gradient(circle at left, #697586, #FFFFFF);
-//         -webkit-background-clip: text;
-//         -webkit-text-fill-color: transparent;
-//         font-size: rem($text);
-//         cursor: pointer;
-//       }
-//     }
-
-//     .main {
-
-//     }
-
-//   }
+&::after{
+  content: ''; /* Pseudo-elementi aktiv edir */
+  background-image: url('/src/assets/images/statics/news-right.png');
+  background-position: 100% 0 ;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
 
 
-
-@import '/src/assets/styles/style.scss';
-
-.news {
-  margin-top: 24px;
-  padding: 120px 0;
-
-  .heading {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: rem(64);
-    @include breakpoint($lg) {
-      width: 100%;
+  .news {
+    margin-top: rem(24);
+    padding: rem(120) 0;
+    // background-image: url('/src/assets/images/statics/news-bg.png');
+    background-repeat: no-repeat;
+    @include breakpoint($md) {
+      padding: rem(64) 0;
     }
-    h2 {
-      font-size: rem($heading);
-      background: linear-gradient(90deg, $white, #697586);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-feature-settings: "ss03";
-      font-family: $jakartaBold;
-    }
-    .headingRight {
+  
+    .header {
       display: flex;
-      gap: rem(8);
-      align-items: center;
-      text-align: right; 
+      justify-content: space-between;
+      margin-bottom: rem(64);
+  
       @include breakpoint($lg) {
+        width: 100%;
+        flex-direction: column;
+      }
+  
+      h2 {
+        font-size: rem($heading);
+        background: linear-gradient(90deg, $white, #697586);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-feature-settings: 'ss03';
+        font-family: $jakartaBold;
+  
+        @include breakpoint($lg) {
+          margin-bottom: rem(16);
+        }
+      }
+  
+      .headingRight {
+        display: flex;
+        gap: rem(8);
+        align-items: center;
+        text-align: right;
+  
+        @include breakpoint($lg) {
           width: 100%;
           justify-content: flex-end;
-      }
-      i {
+        }
+  
+        i {
           color: $gray-300;
           font-size: rem(18);
           display: none;
+  
           @include breakpoint($lg) {
-              display: block;
-              padding-top: rem(4);
+            display: block;
+            padding-top: rem(4);
           }
-      }
-      .goTo {
-        background: radial-gradient(circle at left, #697586, #ffffff);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-size: rem($text);
-        cursor: pointer;
-
+        }
+  
+        .goTo {
+          background: radial-gradient(circle at left, #697586, #ffffff);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          font-size: rem($text);
+          cursor: pointer;
+  
           @include breakpoint($lg) {
             text-decoration: none;
             font-family: $jakartaMedium;
           }
-      }
-      .mobileLine {
+        }
+  
+        .mobileLine {
           display: none;
           background-color: rgba(255, 255, 255, 0.2);
-          height: 1px;
+          height: rem(1);
           width: rem(40);
+  
           @include breakpoint($lg) {
-              display: block;
+            display: block;
           }
+        }
       }
-  }
-
-  }
-
-  .main {
-    display: flex;
-    gap: 24px;
-    overflow-x: auto;
-    &::-webkit-scrollbar {
-      display: none;  
     }
-    .leftCard {
-      flex: 1;
-      @include breakpoint($lg) {
+  
+    .main {
+      display: flex;
+      gap: rem(24);
+      overflow-x: auto;
+  
+      &::-webkit-scrollbar {
         display: none;
       }
-      .newsCard {
-        flex-direction: column;
-        height: 100%;
+  
+      .leftCard {
+        flex: 1;
+        background-color: $body-bg-color;
         @include breakpoint($lg) {
-          width: 100%;
+          display: none;
+        }
+  
+        .newsCard {
+          flex-direction: column;
+          height: 100%;
+          @include breakpoint($lg) {
+            width: 100%;
+            flex: 0;
+          }
+  
+          .img {
+            border-radius: rem(24);
+            position: relative;
+            overflow: hidden;
+            height: rem(412);
+            width: 100%;
+            img {
+              cursor: pointer;
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              transition: transform 0.3s ease;
+              transform-origin: center;
+              border-radius: rem(24);
+            }
+          }
+  
+          .description {
+            border-radius: rem(24);
+            background-color: $gray-800;
+            margin-top: rem(22);
+            transition: .4s ease;
+            .heading {
+              flex-direction: row;
+  
+              span {
+                font-size: rem(15);
+              }
+            }
+  
+            p {
+              font-size: rem(22);
+              line-height: rem(32);
+              margin-bottom: rem(16);
+              display: -webkit-box;
+              -webkit-line-clamp: 3;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              @include breakpoint($md) {
+                font-size: rem(16);
+                line-height: rem(22);
+              }
+            }
+          }
+          &:hover .description {
+            background-color: $gray-700;
+          }
+  
+          &:hover {
+            .img img {
+              transform: scale(1.1);
+            }
+          }
+        }
+      }
+  
+      .rightCards {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: rem(24);
+  
+        @include breakpoint($lg) {
+          flex-direction: row;
           flex: 0;
         }
-        .img {
-          img {
-            height: rem(412);
-            transition: transform 0.3s ease;
+  
+        .newsCard {
+          background-color: $gray-800;
+          @include breakpoint($lg) {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
             cursor: pointer;
+            transition: .4s ease;
           }
-
-        }
-
-        .description {
-          border-radius: rem(24);
-          .heading {
+          &:hover {
+            background-color: $gray-700;
+          }
+  
+          .img {
+            flex: 1;
+            width: rem(288);
+            height: rem(196);
+            overflow: hidden;
+            @include breakpoint($lg) {
+              height: rem(224);
+              flex: none;
+            }
+            img {
+              cursor: pointer;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              transition: transform 0.3s ease;
+              transform-origin: center;
+            }
+          }
+  
+          .img:hover img {
+            transform: scale(1.1);
+          }
+  
+          .description {
+            flex: 1;
+            @include breakpoint($lg) {
+              padding: rem(24);
+              flex: none;
+            }
             span {
-              font-size: 1rem(15);
+              font-size: 12px;
             }
-          }
-
-          p {
-            font-size: rem(24);
-            line-height: rem(32);
-            @include breakpoint($md) {
-              font-size: rem(16);
-              line-height: rem(22);
+  
+            p {
+              font-size: rem(18);
+              line-height: rem(26);
+              @include breakpoint($lg) {
+                line-height: rem(24);
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              }
             }
           }
         }
-        &:hover {
-          .img img {
-            transform: scale(1.1); 
-          }
-        }
       }
-    }
-
-    .rightCards {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: rem(24);
-      @include breakpoint($lg) {
-        flex-direction: row;
-        flex: 0;
-      }
+  
       .newsCard {
-        @include breakpoint($lg) {
-          width: 100%;
-          display: flex;
-          flex-direction: column;
-        }
-        .img {
-          flex: 1;
-          width: rem(288);
-          height: rem(194);
-          img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-            cursor: pointer;
-          }
-        }
-        &:hover {
-          .img img {
-            transform: scale(1.1); 
-          }
-        }
-
+        display: flex;
+        box-sizing: border-box;
+        border-radius: rem(24);
+        overflow: hidden;
+        cursor: pointer;
+  
         .description {
-          flex: 1;
-
-        span {
-          font-size: rem(12);
-        }
-
+          padding: rem(32) rem(32) rem(24) rem(32);
+          @include breakpoint($lg) {
+            padding: rem(24);
+          }
+  
+          .img {
+            border-radius: rem(24);
+  
+            img {
+              object-fit: cover;
+              height: 100%;
+              width: 100%;
+            }
+          }
+  
+          .heading {
+            margin-bottom: rem(16);
+  
+            span {
+              color: $white;
+            }
+  
+            .newsDate {
+              opacity: 60%;
+              position: relative;
+              margin-left: rem(40);
+  
+              &::before {
+                content: '';
+                position: absolute;
+                left: rem(-20);
+                top: 50%;
+                transform: translateY(-50%);
+                width: rem(6);
+                height: rem(6);
+                background-color: $white;
+                border-radius: 50%;
+              }
+            }
+          }
+  
           p {
-            font-size: rem(18);
-            line-height: rem(26);
-          }
-        }
-      }
-    }
-
-    .newsCard {
-      display: flex;
-      box-sizing: border-box;
-      gap: 12px;
-      background-color: $gray-800;
-      border-radius: rem(24);
-      overflow: hidden;
-      .description {
-        padding: rem(32) rem(32) rem(24) rem(32);
-        @include breakpoint($lg) {
-          padding: rem(24);
-        }
-        .img {
-
-          border-radius: rem(24);
-          img {
-            object-fit: cover;
-            height: 100%;
-            width: 100%;
-          }
-        }
-        .heading {
-          margin-bottom: rem(16);
-
-          span {
             color: $white;
+            line-height: rem(26);
+            font-family: $jakartaSemiBold;
           }
-
-          .newsText {}
-
-          .newsDate {
-            opacity: 60%;
-          }
-        }
-
-        p {
-          color: $white;
-          line-height: rem(26);
-          font-family: $jakartaSemiBold;
         }
       }
     }

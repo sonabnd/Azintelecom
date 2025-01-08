@@ -1,93 +1,102 @@
 @import '/src/assets/styles/style.scss';
 
-.inner {
-    padding-top: rem(120);
-    padding-bottom: rem(120);
-
-    @include breakpoint($md) {
-        padding-top: rem(62);
-        padding-top: rem(62);
-    }
-
-    .heading {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: rem(64);
-
+.footerTop {
+    background-image: url('/src/assets/images/statics/footer-top.png');
+    background-repeat: no-repeat;
+    .inner {
+        padding-top: rem(120);
+        padding-bottom: rem(120);
         @include breakpoint($md) {
-            margin-bottom: rem(32);
+            padding-top: rem(62);
+            padding-top: rem(62);
         }
-
-        h2 {
-            font-size: rem($heading);
-            font-family: $jakartaBold;
-            background: linear-gradient(to right, #FFFFFF, #697586);
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-feature-settings: "ss03";
-            @include breakpoint($md) {
-                font-size: rem(24);
-            }
-        }
-
-        .navigation {
+    
+        .heading {
             display: flex;
-            gap: rem(12);
-
-            @include breakpoint($lg) {
-                display: none;
+            justify-content: space-between;
+            margin-bottom: rem(64);
+    
+            @include breakpoint($md) {
+                margin-bottom: rem(32);
             }
-
-            div {
-                width: rem(48);
-                height: rem(48);
-                background-color: $gray-800;
-                border-radius: rem(12);
+    
+            h2 {
+                font-size: rem($heading);
+                font-family: $jakartaBold;
+                background: linear-gradient(to right, #FFFFFF, #697586);
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-feature-settings: "ss03";
+    
+                @include breakpoint($md) {
+                    font-size: rem(24);
+                }
+            }
+    
+            .navigation {
                 display: flex;
-                align-items: center;
-                justify-content: center;
-                cursor: pointer;
+                gap: rem(12);
+    
+                @include breakpoint($lg) {
+                    display: none;
+                }
+    
+                div {
+                    width: rem(48);
+                    height: rem(48);
+                    background-color: $gray-800;
+                    border-radius: rem(12);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                }
             }
         }
-    }
-
-    .linksBottom {
-        .linkContainer {
+    
+        .linksBottom {
+            .linkContainer {
                 .card {
                     box-sizing: border-box;
                     padding: rem(24);
                     background-image: url('/src/assets/images/statics/link-bg.png');
+                    background-size: cover;
+                    background-repeat: no-repeat;
                     border-radius: rem(20);
                     background-color: $gray-900;
                     gap: rem(24);
                     height: rem(184);
-                    // width: 100%;
+                    cursor: pointer;
+    
                     @include breakpoint($xl) {
                         padding: rem(16);
                         height: rem(200);
                     }
+    
                     .cardInner {
-                        // width: 100%;
                         .logoTitle {
                             display: flex;
                             align-items: center;
+    
                             @include breakpoint($xl) {
-                                min-height: rem(110); 
-                                // TODO DEQIQ BILMIREM
+                                min-height: rem(110);
                             }
+    
                             p {
                                 color: $gray-100;
                                 font-family: $jakartaSemiBold;
                                 line-height: rem(22);
+    
                                 @include breakpoint($md) {
                                     font-size: rem(14);
                                     line-height: rem(20);
                                 }
                             }
-
+    
                             .logo {
                                 margin-right: rem(12);
                                 flex-shrink: 0;
+    
                                 img {
                                     object-fit: cover;
                                     width: 100%;
@@ -95,6 +104,7 @@
                                 }
                             }
                         }
+    
                         .goTo {
                             background-color: $gray-800;
                             padding: rem(8) rem(12) rem(10) rem(12);
@@ -102,6 +112,7 @@
                             display: flex;
                             justify-content: space-between;
                             margin-top: rem(20);
+    
                             span {
                                 font-size: rem($little-text);
                                 color: $gray-200;
@@ -110,8 +121,8 @@
                         }
                     }
                 }
-
-            // }
+    
+            }
         }
     }
 }

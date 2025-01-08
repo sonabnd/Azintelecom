@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react';
 import useLocalization from '../../../../assets/lang'
 import css from './actions.module.scss'
-import { FaAngleRight } from "react-icons/fa6";
+import { FaAngleRight } from 'react-icons/fa6';
 import backIcon from '/src/assets/images/icons/back-icon.png';
 
 const ActionsComponent = () => {
@@ -14,6 +14,14 @@ const ActionsComponent = () => {
       title: 'Vətəndaş',
       text: 'Orci faucibus consequat a integer aliquet. Mi pharetra porta scelerisque',
       child: [
+        {
+          logo: '/src/assets/images/statics/citizen-logo1.png',
+          description: 'Dövlət və biznes qurumlarının elektronlaşmış xidmətləri',
+        },
+        {
+          logo: '/src/assets/images/statics/citizen-logo2.png',
+          description: 'Dövlət və biznes qurumlarının elektronlaşmış xidmətləri',
+        },
         {
           logo: '/src/assets/images/statics/citizen-logo1.png',
           description: 'Dövlət və biznes qurumlarının elektronlaşmış xidmətləri',
@@ -94,7 +102,7 @@ const ActionsComponent = () => {
   const [activeItem, setActiveItem] = useState(actionsData[0]);
   const [activeRight, setActiveRight] = useState(false)
 
-  const leftItemClickFunc = useCallback((item) => {
+  const leftItemClickFunc = useCallback((item: any) => {
     if (innerWidth < 991) {
       setActiveRight(true)
     }
@@ -117,7 +125,7 @@ const ActionsComponent = () => {
               </div>
               <div style={{ flexWrap: 'nowrap' }} className='row'>
 
-                <div className={`col-lg-5 ${activeRight ? css.nicat2 : ''}`}>
+                <div className={`col-lg-5 ${activeRight ? css.noneLeft : ''}`}>
                   {actionsData.map((item) => (
                     <div
                       key={item.id}
@@ -127,7 +135,7 @@ const ActionsComponent = () => {
                     >
                       <div className={css.left}>
                         <div className={css.card}>
-                          <div className={css.cardInner}>
+                          <div className={`${css.cardInner} ${activeItem?.id === item.id ? css.active  : ''}`}>
                             <p>{item.title}</p>
                             <span>{item.text}</span>
                           </div>
@@ -139,7 +147,7 @@ const ActionsComponent = () => {
                 </div>
 
                 <div
-                  className={`col-lg-7 ${css.nicat} ${activeRight ? css.visibilityRight : ''}`}
+                  className={`col-lg-7 ${css.noneRight} ${activeRight ? css.visibilityRight : ''}`}
                 >
                   <div className={css.right}>
                     <div className={css.close} onClick={() => { setActiveRight(false) }}>

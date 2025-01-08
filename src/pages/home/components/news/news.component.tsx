@@ -20,52 +20,54 @@ const NewsComponent = () => {
 
     return (
         <div className="container-fluid">
-            <section>
-                <div className="container">
-                    <div className={css.news}>
-                        <div className={css.heading}>
-                            <h2>{translate('news_heading')}</h2>
-                            <div className={css.headingRight}>
+            <div className={css.newsContainer}>
+                <section>
+                    <div className="container">
+                        <div className={css.news}>
+                            <div className={css.header}>
+                                <h2>{translate('news_heading')}</h2>
+                                <div className={css.headingRight}>
                                     <div className={css.mobileLine}></div>
                                     <span className={css.goTo}>{translate('news_goTo')}</span>
                                     <i><FaAngleRight /></i>
                                 </div>
-                        </div>
-                        <div className={css.main}>
-                            <div className={css.leftCard}>
-                                <div className={css.newsCard}>
-                                    <div className={css.img}>
-                                        <img src={newsData[0].img} alt={translate('img_alt')} />
-                                    </div>
-                                    <div className={css.description}>
-                                        <div className={css.heading}>
-                                            <span className={css.newsText}>Xeberler</span>
-                                            <span className={css.newsDate}>{newsData[0].date}</span>
-                                        </div>
-                                        <p>{newsData[0].text}</p>
-                                    </div>
-                                </div>
                             </div>
-                            <div className={css.rightCards}>
-                                {newsData.slice(1, 4).map((news) => (
-                                    <div key={news.id} className={css.newsCard}>
+                            <div className={css.main}>
+                                <div className={css.leftCard}>
+                                    <div className={css.newsCard}>
                                         <div className={css.img}>
-                                            <img src={news.img} alt={translate('img_alt')} />
+                                            <img src={newsData[0].img} alt={translate('img_alt')} />
                                         </div>
                                         <div className={css.description}>
                                             <div className={css.heading}>
                                                 <span className={css.newsText}>{translate('news_heading')}</span>
-                                                <span className={css.newsDate}>{news.date}</span>
+                                                <span className={css.newsDate}>{newsData[0].date}</span>
                                             </div>
-                                            <p>{news.text}</p>
+                                            <p>{newsData[0].text}</p>
                                         </div>
                                     </div>
-                                ))}
+                                </div>
+                                <div className={css.rightCards}>
+                                    {newsData.slice(1, 4).map((news) => (
+                                        <div key={news.id} className={css.newsCard}>
+                                            <div className={css.img}>
+                                                <img src={news.img} alt={translate('img_alt')} />
+                                            </div>
+                                            <div className={css.description}>
+                                                <div className={css.heading}>
+                                                    <span className={css.newsText}>{translate('news_heading')}</span>
+                                                    <span className={css.newsDate}>{news.date}</span>
+                                                </div>
+                                                <p>{news.text}</p>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            </div>
         </div>
     );
 };

@@ -1,13 +1,23 @@
 import css from './navbar.module.scss';
-import  { useCallback, useState } from 'react';
+import { useCallback, useState } from 'react';
 
-const NavbarComponent = ({data}: any) => {
+const NavbarComponent = ({ data }: any) => {
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
 
-  const handleDropdown = useCallback((index: any) => {
+  const handleMouseEnter = (index: any) => {
+    setHoveredIndex(index);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredIndex(null);
+  };
+  const handleDropdown = useCallback(
+    (index: any) => {
       setActiveDropdown(activeDropdown === index ? null : index);
-  },[activeDropdown]);
-
+    },
+    [activeDropdown]
+  );
 
   const chunkArray = (array: any[], size: number) => {
     const chunks = [];
@@ -23,10 +33,17 @@ const NavbarComponent = ({data}: any) => {
         <nav>
           <ul className={css.navList}>
             {data.map((item, index) => (
-              <div className={css.navListContainer} key={item.id}>
+              <div
+                className={css.navListContainer}
+                key={item.id}
+                onMouseEnter={() => handleMouseEnter(index)}
+                onMouseLeave={handleMouseLeave}
+              >
                 <li
                   onClick={() => handleDropdown(index)}
-                  className={`${css.navItem} ${activeDropdown === index ? css.activeNavItem : ''}`}
+                  className={`${css.navItem} ${
+                    activeDropdown === index ? css.activeNavItem : ''
+                  }`}
                 >
                   <div className={css.dropdown}>
                     <div>
@@ -34,33 +51,45 @@ const NavbarComponent = ({data}: any) => {
                       {activeDropdown === index && (
                         <div>
                           <ul className={css.dropdownContainer}>
-                            {chunkArray(item.dropdown, 3).map((chunk, chunkIndex) => (
-                              <div key={chunkIndex} className={css.dropdownRow}>
-                                {chunk.map((dropdown) => (
-                                  <li
-                                    key={dropdown.id}
-                                    className={css.dropdownItem}
-                                    onClick={(e) => e.stopPropagation()} 
-                                  >
-                                    <div className={css.dropdownPair}>
-                                      <div className={css.dropdownIcon}>
-                                        <img src={dropdown.icon} alt="img" />
+                            {chunkArray(item.dropdown, 3).map(
+                              (chunk, chunkIndex) => (
+                                <div
+                                  key={chunkIndex}
+                                  className={css.dropdownRow}
+                                >
+                                  {chunk.map((dropdown) => (
+                                    <li
+                                      key={dropdown.id}
+                                      className={css.dropdownItem}
+                                      onClick={(e) => e.stopPropagation()}
+                                    >
+                                      <div className={css.dropdownPair}>
+                                        <div className={css.dropdownIcon}>
+                                          <img src={dropdown.icon} alt='img' />
+                                        </div>
+                                        <div className={css.textDescription}>
+                                          <p className={css.dropText}>
+                                            {dropdown.name}
+                                          </p>
+                                          <p className={css.dropDescription}>
+                                            {dropdown.description}
+                                          </p>
+                                        </div>
                                       </div>
-                                      <div className={css.textDescription}>
-                                        <p className={css.dropText}>{dropdown.name}</p>
-                                        <p className={css.dropDescription}>{dropdown.description}</p>
-                                      </div>
-                                    </div>
-                                  </li>
-                                ))}
-                              </div>
-                            ))}
+                                    </li>
+                                  ))}
+                                </div>
+                              )
+                            )}
                           </ul>
                         </div>
                       )}
                     </div>
                   </div>
                 </li>
+                {hoveredIndex === index && (
+                  <div className={css.activeCircle}></div>
+                )}
                 {activeDropdown === index && (
                   <div className={css.activeCircle}></div>
                 )}
@@ -74,5 +103,3 @@ const NavbarComponent = ({data}: any) => {
 };
 
 export default NavbarComponent;
-
-

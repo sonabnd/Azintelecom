@@ -17,16 +17,6 @@ const HeaderComponent = () => {
     setIsMenuOpen((prev) => !prev)
   }, [isMenuOpen])
 
-  // const hamburgerMenuFunc = useCallback(() => {
-  //   setIsHamburgerMenu((prev) => !prev)
-  //   console.log("nicat get");
-  // }, []);
-
-  // const closeMenuFunc = useCallback(() => {
-  //   console.log("sagol");
-  //   setIsHamburgerMenu(false);
-  // }, []);
-
   const navData = [
     {
       id: 1,
@@ -35,7 +25,9 @@ const HeaderComponent = () => {
       dropdown: [
         { id: 1, name: 'Şirkət haqqında', description: 'A proxy for encrypting sensit...', icon: '/src/assets/images/icons/dropdown-icon-1.png' },
         { id: 2, name: 'Strukturda', description: 'A proxy for encrypting sensit...', icon: '/src/assets/images/icons/dropdown-icon-4.png' },
-        { id: 3, name: 'Layihələrimiz', description: 'A proxy for encrypting sensit...', icon: '/src/assets/images/icons/dropdown-icon-2.png' },
+        { id: 3, name: 'Infosystems', description: 'A proxy for encrypting sensit...', icon: '/src/assets/images/icons/dropdown-icon-4.png' },
+        { id: 2, name: 'Strukturda', description: 'A proxy for encrypting sensit...', icon: '/src/assets/images/icons/dropdown-icon-4.png' },
+
       ],
     },
     {
@@ -46,6 +38,7 @@ const HeaderComponent = () => {
         { id: 1, name: 'Media', description: 'A proxy for encrypting sensit...', icon: '/src/assets/images/icons/dropdown-icon-3.png' },
         { id: 2, name: 'AzInTelecom Cloud', description: 'A proxy for encrypting sensit...', icon: '/src/assets/images/icons/dropdown-icon-2.png' },
         { id: 3, name: 'Infosystems', description: 'A proxy for encrypting sensit...', icon: '/src/assets/images/icons/dropdown-icon-4.png' },
+        { id: 2, name: 'Strukturda', description: 'A proxy for encrypting sensit...', icon: '/src/assets/images/icons/dropdown-icon-4.png' },
       ],
     },
     {
@@ -78,7 +71,6 @@ const HeaderComponent = () => {
       dropdown: [
         { id: 1, name: 'Hesabat', description: 'A proxy for encrypting sensit...', icon: '/src/assets/images/icons/dropdown-icon-2.png' },
         { id: 2, name: 'AzInTelecom Cloud', description: 'A proxy for encrypting sensit...', icon: '/src/assets/images/icons/dropdown-icon-3.png' },
-        { id: 3, name: 'Infosystems', description: 'A proxy for encrypting sensit...', icon: '/src/assets/images/icons/dropdown-icon-4.png' },
       ],
     },
     {
@@ -88,8 +80,6 @@ const HeaderComponent = () => {
       dropdown: [
         { id: 1, name: 'Contact', description: 'A proxy for encrypting sensit...', icon: '/src/assets/images/icons/dropdown-icon-2.png' },
         { id: 2, name: 'AzInTelecom Cloud', description: 'A proxy for encrypting sensit...', icon: '/src/assets/images/icons/dropdown-icon-3.png' },
-        { id: 3, name: 'Infosystems', description: 'A proxy for encrypting sensit...', icon: '/src/assets/images/icons/dropdown-icon-4.png' },
-        { id: 4, name: 'Infosystems', description: 'A proxy for encrypting sensit...', icon: '/src/assets/images/icons/dropdown-icon-4.png' },
       ],
     },
   ];
@@ -126,7 +116,7 @@ const HeaderComponent = () => {
         </div>
         {
           isMenuOpen && (
-            <div><LargeMenuComponent data={navData} /></div>
+            <div><LargeMenuComponent data={navData} closeMenu={() => setIsMenuOpen(false)} /></div>
           )
         }
       </header>

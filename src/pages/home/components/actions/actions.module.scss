@@ -93,48 +93,48 @@
       border-radius: rem(40);
       z-index: 6;
       box-sizing: border-box;
-      // z-index: 10;
+      background-color: $white;
+
       @include breakpoint($lg) {
-        // border: none;
-        // padding: none;
         margin-left: 0;
         border: none;
         padding: 0;
       }
+
       .close {
         align-items: center;
         display: none;
+
         @include breakpoint($lg) {
           display: block;
+          margin-bottom: rem(12);
         }
+
         img {
           @include breakpoint($lg) {
             width: rem(52);
             height: rem(52);
           }
         }
+
         .back {
           font-size: rem(18);
           font-family: $jakartaMedium;
           color: $gray-900;
         }
       }
+
       .rightContainer {
         position: relative;
         height: rem(500);
         overflow-y: auto;
-        // border: 1px solid #ddd;
-        // background-color: #f9f9f9;
         border-radius: rem(40);
         padding: rem(10) rem(20) 0 rem(32);
 
         @include breakpoint($lg) {
-          padding: 0;
+          padding: rem(10) rem(5) 0 rem(5);
           overflow: hidden;
           height: auto;
-          // overflow: hidden;
-          // border: none;
-          // background-color: none;
         }
 
         &::-webkit-scrollbar {
@@ -163,10 +163,26 @@
           padding: rem(24);
           border-radius: rem(16);
 
+          @include breakpoint($lg) {
+            background-color: $white;
+          }
+
           .img {
             width: rem(240);
             height: rem(60);
             margin-top: rem(12);
+
+            @include breakpoint($sm) {
+              width: rem(64);
+              height: rem(32);
+              margin-bottom: rem(8);
+            }
+
+            @include breakpoint($lg) {
+              width: rem(92);
+              height: rem(52);
+              margin-bottom: rem(12);
+            }
 
             .logo {
               object-fit: cover;
@@ -202,44 +218,47 @@
       &::before {
         content: "";
         position: absolute;
-        background-color: rgba(205, 213, 223, 0.34);
-        top: rem(89);
+        background-color: $before-bg;
         width: rem(24);
-        height: rem(404);
-        left: rem(-27);
+        left: rem(-25);
         border-radius: rem(20);
         top: rem(50);
         bottom: rem(50);
         height: calc(100% - rem(100));
         border-top-left-radius: rem(20);
         border-bottom-left-radius: rem(20);
+
+        @include breakpoint($lg) {
+          display: none;
+        }
       }
 
       &::after {
-        background: rgba(205, 213, 223, .16);
-        height: calc(100% - 180px);
-        left: rem(-44);
-        // top: 90px;
         content: "";
         position: absolute;
+        background: $after-bg;
+        left: rem(-48);
         width: rem(24);
-        height: rem(482);
         top: rem(89);
         bottom: rem(89);
         height: calc(100% - rem(178));
         border-top-left-radius: rem(20);
         border-bottom-left-radius: rem(20);
+
+        @include breakpoint($lg) {
+          display: none;
+        }
       }
 
     }
 
     .left {
-      background-color: red;
       width: 100%;
       display: inline-block;
-      // @include breakpoint($lg){
-      //   width: 100%;
-      // }
+      background-color: $white;
+      @include breakpoint($lg) {
+        background: none;
+      }
       .card {
         display: flex;
         justify-content: space-between;
@@ -254,6 +273,19 @@
 
           @include breakpoint($lg) {
             padding: rem(16) rem(24) rem(16) 0;
+          }
+
+          &.active {
+            border-left: rem(4) solid $blue-600;
+            background-color: $gray-50;
+            padding-left: rem(32);
+            transition: 0.4s;
+
+            @include breakpoint($lg) {
+              border-left: none;
+              background-color: transparent;
+              padding-left: 0;
+            }
           }
 
           &:hover {
@@ -307,12 +339,12 @@
   display: block !important;
 }
 
-.nicat {
+.noneRight {
   @include breakpoint($lg) {
     display: none;
   }
 }
 
-.nicat2{
+.noneLeft {
   display: none;
 }

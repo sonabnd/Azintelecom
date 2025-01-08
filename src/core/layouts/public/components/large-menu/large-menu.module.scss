@@ -1,22 +1,5 @@
 @import '/src/assets/styles/style.scss';
 
-// .largeMenu {
-//     .menuContainer {
-//         position: fixed;
-//         right: rem(57);
-//         background-color: $gray-90;
-//         border: 1px solid $white-border-opacity;
-//         border-radius: rem(32);
-//         width: 80%;
-//         top: 110px;
-//         background-image: url('/src/assets//images//statics/dropdown-img.png');
-//         background-repeat: no-repeat;
-//         background-position: right bottom;
-//     }
-// }
-
-
-
 .largeMenu {
   padding: 24px;
   background-color: #1a1a2e;
@@ -26,20 +9,32 @@
   @include breakpoint($lg) {
     display: none;
   }
-  .menuContainer {
-    display: grid;
-    grid-template-columns: repeat(4, 4fr);
-    gap: 16px;
+  .closeMenu {
     position: fixed;
-    right: rem(57);
     background-color: $gray-90;
+    right: rem(57);
     border: 1px solid $white-border-opacity;
     border-radius: rem(32);
     width: 80%;
     top: 110px;
+    height: 80vh;
     background-image: url('/src/assets/images/statics/dropdown-img.png');
     background-repeat: no-repeat;
     background-position: right bottom;
+    .heading {
+      display: flex;
+      justify-content: flex-end;
+      .closeContainer {
+        margin-top: rem(24);
+        margin-right: rem(24);
+        cursor: pointer;
+      }
+    }
+    .menuContainer {
+      display: grid;
+      grid-template-columns: repeat(4, 4fr);
+      gap: 16px;
+    }
   }
 
 

@@ -52,12 +52,9 @@ const FooterComponent = () => {
     <footer>
       <div className='container-fluid'>
         <div className={css.footer}>
-
-          <div className='container'>
             <div className={css.top}>
               <UsefulLinksComponent />
             </div>
-          </div>
           <div className={css.bottom}>
             <div className='container'>
               <div className={css.bottomContainer}>
@@ -68,10 +65,10 @@ const FooterComponent = () => {
                   <div className={css.main}>
                     <div className={css.innerMain}>
                       <div className={css.footerList}>
-                        {chunkArray(footerList, 4).map((chunk, chunkIndex) => (
+                        {chunkArray(footerList, 4).map((chunk) => (
                           <ul className={css.list}>
                             {chunk.map((list) => (
-                              <li >{list.name}</li>
+                              <li key={list.id} >{list.name}</li>
                             ))}
                           </ul>
                           ))}

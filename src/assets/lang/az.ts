@@ -33,7 +33,7 @@ export const az = {
     // Projects
     projects_heading: 'Layihələrimiz',
     projects_goTo: 'Bütün layihələrə bax',
-    projects_text: 'Lorem ipsum dolor sit amet consectetur. Massa at varius dolor in dui bibendum turpis. Massa bibendum et phasellus ultrices quis dolor mollis. Bibendum porttitor augue commodo',
+    projects_text: 'Lorem ipsum dolor sit amet consectetur. Massa at varius dolor in dui bibendum turpis. Massa bibendum et phasellus ultrices',
 
     // Faydalı Linklər
     useful_links: 'Faydalı linklər',

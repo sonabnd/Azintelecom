@@ -21,7 +21,7 @@ const LocationComponent = () => {
     <div className={css.location}>
         {
             locationData.map(item => (
-                <div className={css.paragraph}>
+                <div className={css.paragraph} key={item.id}>
                     <div className={css.inner}>
                         <img src={item.icon} alt={translate('img_alt')} />
                         <span>{item.text}</span>

@@ -11,18 +11,21 @@
     justify-content: center;
     .rightLeft {
         .left {
-            p {
+            h1 {
                 color: $white;
                 font-size: rem(56);
-                font-family: $jakartaSemiBold;
-                display: inline-block;
                 font-feature-settings: "ss03";
-            }
-            .digitalFuture {
-                font-family: $jakartaExtraBold;
                 background: radial-gradient(79.02% 175.6% at 0% 50%, #FFFFFF 30%, #4B5565 100%);
                 background-clip: text;
                 color: transparent;
+                line-height: rem(72);
+                span {
+                    font-family: $jakartaExtraBold;
+                }
+                @include breakpoint($lg) {
+                    font-size: rem(24);
+                    line-height: rem(40);
+                }
             }
         }
     }

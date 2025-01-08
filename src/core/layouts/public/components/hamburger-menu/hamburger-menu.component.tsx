@@ -2,6 +2,7 @@ import { useCallback, useState } from 'react';
 import css from './hamburger-menu.module.scss'
 import { FaAngleRight } from "react-icons/fa6";
 
+
 const HamburgerMenuComponent = ({ data }: any) => {
   const [activeItem, setActiveItem] = useState(false);
   const [activeDescription, setActiveDescription] = useState(null);
