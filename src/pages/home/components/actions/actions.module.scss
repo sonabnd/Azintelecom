@@ -1,13 +1,38 @@
 @import '/src/assets//styles/style.scss';
 
 .actions {
+  position: relative;
   background-color: $white;
   padding-top: rem(120);
   padding-bottom: rem(120);
   border-radius: rem($container-radius);
   margin-top: rem(24);
-  background-image: url('/src/assets/images/statics/actions-left.png');
+  // background-image: url('/src/assets/images/statics/actions-left.png');
   background-repeat: no-repeat;
+
+  &:before {
+    content: "";
+    background-image: url('/src/assets/images/statics/actions-left.png');
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-position: left top;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+  }
+
+  &:after {
+    content: "";
+    background-image: url('/src/assets/images/statics/actions-left.png');
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+  }
 
   @include breakpoint($lg) {
     padding-top: rem(64);
