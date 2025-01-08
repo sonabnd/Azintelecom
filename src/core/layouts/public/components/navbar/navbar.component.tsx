@@ -64,38 +64,40 @@ const NavbarComponent = ({ data }: any) => {
                       <p>{item.link}</p>
                       {activeDropdown === index && (
                         <div>
-                          <ul className={css.dropdownContainer}>
-                            {chunkArray(item.dropdown, 3).map(
-                              (chunk, chunkIndex) => (
-                                <div
-                                  key={chunkIndex}
-                                  className={css.dropdownRow}
-                                >
-                                  {chunk.map((dropdown) => (
-                                    <li
-                                      key={dropdown.id}
-                                      className={css.dropdownItem}
-                                      onClick={(e) => e.stopPropagation()}
-                                    >
-                                      <div className={css.dropdownPair}>
-                                        <div className={css.dropdownIcon}>
-                                          <img src={dropdown.icon} alt='img' />
+                          <div className={css.dropdownContainer}>
+                          <ul className={css.dropdownListContainer}>
+                              {chunkArray(item.dropdown, 3).map(
+                                (chunk, chunkIndex) => (
+                                  <div
+                                    key={chunkIndex}
+                                    className={css.dropdownRow}
+                                  >
+                                    {chunk.map((dropdown) => (
+                                      <li
+                                        key={dropdown.id}
+                                        className={css.dropdownItem}
+                                        onClick={(e) => e.stopPropagation()}
+                                      >
+                                        <div className={css.dropdownPair}>
+                                          <div className={css.dropdownIcon}>
+                                            <img src={dropdown.icon} alt='img' />
+                                          </div>
+                                          <div className={css.textDescription}>
+                                            <p className={css.dropText}>
+                                              {dropdown.name}
+                                            </p>
+                                            <p className={css.dropDescription}>
+                                              {dropdown.description}
+                                            </p>
+                                          </div>
                                         </div>
-                                        <div className={css.textDescription}>
-                                          <p className={css.dropText}>
-                                            {dropdown.name}
-                                          </p>
-                                          <p className={css.dropDescription}>
-                                            {dropdown.description}
-                                          </p>
-                                        </div>
-                                      </div>
-                                    </li>
-                                  ))}
-                                </div>
-                              )
-                            )}
+                                      </li>
+                                    ))}
+                                  </div>
+                                )
+                              )}
                           </ul>
+                          </div>
                         </div>
                       )}
                     </div>

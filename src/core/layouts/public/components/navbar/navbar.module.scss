@@ -46,50 +46,50 @@
                         z-index: 10;
                         color: black;
                         width: 100%;
-                        display: flex;
-                        justify-content: space-between;
-                        .dropdownRow {
-                            border-right: 1px solid $gray-800;
-                            padding-right: rem(30);
-                            &:last-child {
-                                border-right: none;
-                                padding-right: rem(0);
-                            }
-                            .dropdownItem {
-                                margin-top: rem(4);
-                                .dropdownPair {
-                                    display: flex;
-                                    align-items: center;
-                                    margin-bottom: rem(4);
-                                    padding: rem(4) rem(12);
-                                    .dropdownIcon {
-                                        background-color: $gray-20;
-                                        padding: rem(8);
-                                        border-radius: rem(8);
-                                        margin-right: rem(8);
-                                        
-                                    }
-                                    .textDescription {
+                        .dropdownListContainer {
+                            display: flex;
+                            justify-content: space-between;
+                            .dropdownRow {
+                                &:first-child {
+                                    border-right: 1px solid $gray-800;
+                                    padding-right: rem(30);
+                                }
+                                .dropdownItem {
+                                    margin-top: rem(4);
+                                    .dropdownPair {
+                                        display: flex;
+                                        align-items: center;
                                         margin-bottom: rem(4);
-                                        padding: rem(8);
-                                        .dropText {
-                                            color: $white;
-                                            font-size: rem(15);
-                                            margin-bottom: rem(2);
+                                        padding: rem(4) rem(12);
+                                        .dropdownIcon {
+                                            background-color: $gray-20;
+                                            padding: rem(8);
+                                            border-radius: rem(8);
+                                            margin-right: rem(8);
+                                            
                                         }
-                                        .dropDescription {
-                                            color: $gray-400;
-                                            font-size: rem(12);
+                                        .textDescription {
+                                            margin-bottom: rem(4);
+                                            padding: rem(8);
+                                            .dropText {
+                                                color: $white;
+                                                font-size: rem(15);
+                                                margin-bottom: rem(2);
+                                            }
+                                            .dropDescription {
+                                                color: $gray-400;
+                                                font-size: rem(12);
+                                            }
                                         }
                                     }
-                                }
-                                &:hover .dropdownIcon {
-                                    background: radial-gradient(rgba(0, 67, 206, 1), rgba(0, 45, 156, 1));
-                                    backdrop-filter: blur(12px);
-                                }
-                                &:hover {
-                                    background-color: $gray-20;
-                                    border-radius: rem(16);
+                                    &:hover .dropdownIcon {
+                                        background: radial-gradient(rgba(0, 67, 206, 1), rgba(0, 45, 156, 1));
+                                        backdrop-filter: blur(12px);
+                                    }
+                                    &:hover {
+                                        background-color: $gray-20;
+                                        border-radius: rem(16);
+                                    }
                                 }
                             }
                         }
