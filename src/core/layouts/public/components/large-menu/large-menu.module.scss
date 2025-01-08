@@ -3,13 +3,12 @@
 .largeMenu {
   padding: 24px;
   background-color: #1a1a2e;
-  border-radius: 8px;
   color: #fff;
   position: static;
   @include breakpoint($lg) {
     display: none;
   }
-  .menuContainer {
+  .allContainer {
     position: fixed;
     background-color: $gray-90;
     right: rem(57);
@@ -32,26 +31,27 @@
       }
     }
     .menuContainer {
-      z-index: 99999;
       display: grid;
       grid-template-columns: repeat(4, 4fr);
       gap: 16px;
+      .column {
+        display: flex;
+        flex-direction: column;
+        padding: 16px;
+        border-radius: 8px;
+        height: 340px; 
+        transition: .7s;
+        .titleName {
+          font-size: rem(16);
+          font-family: $jakartaMedium;
+          margin-bottom: rem(20);
+          margin-left: rem(24);
+        }
+      }
     }
   }
 
 
-  .column {
-    display: flex;
-    flex-direction: column;
-    padding: 16px;
-    border-radius: 8px;
-    height: 340px; 
-    transition: .7s;
-    h3 {
-      font-size: rem(16);
-      font-family: $jakartaMedium;
-    }
-  }
 
   h3 {
     color: #ffffff;

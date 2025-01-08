@@ -5,7 +5,7 @@ const LargeMenuComponent = ({ data, closeMenu }: any) => {
 
   return (
     <div className={css.largeMenu}>
-      <div className={css.menuContainer}>
+      <div className={css.allContainer}>
         <div className={css.heading}>
           <div className={css.closeContainer} onClick={closeMenu}>
             <img src={close} alt="close" />
@@ -14,7 +14,7 @@ const LargeMenuComponent = ({ data, closeMenu }: any) => {
         <div className={css.menuContainer}>
           {data.map((category: any, index: number) => (
             <div key={category.id} className={css.column}>
-              <h3>{category.link}</h3>
+              <p className={css.titleName}>{category.link}</p>
               <ul className={css.category}>
                 {category.dropdown?.map((item: any) => (
                   <li key={item.id} className={css.dropdownItem}>
