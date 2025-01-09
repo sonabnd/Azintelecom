@@ -4,14 +4,17 @@
     background-image: url('/src/assets/images/statics/introduction-bg.png');
     background-size: cover;
     height: 100vh;
-    border-bottom-right-radius: rem(48) ;
-    border-bottom-left-radius: rem(48) ;
+    border-bottom-right-radius: rem(48);
+    border-bottom-left-radius: rem(48);
     display: flex;
     align-items: center;
     justify-content: center;
-    .rightLeft {
-        .left {
-            h1 {
+
+    position: relative;
+    .innerContainer {
+        .rightLeft {
+            width: 100%;
+            .introText {
                 color: $white;
                 font-size: rem(56);
                 font-feature-settings: "ss03";
@@ -22,11 +25,54 @@
                 span {
                     font-family: $jakartaExtraBold;
                 }
+
                 @include breakpoint($lg) {
-                    font-size: rem(24);
-                    line-height: rem(40);
+                    font-size: rem(30);
+                    line-height: rem(46);
+                    margin-bottom: 114px;
+                    width: 100%;
+                }
+            }
+            .right {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                overflow: hidden;
+                @include breakpoint($lg) {
+                    height: 80vh;
+                    position: relative;
+                }
+                .splineContainer {
+                    width: 100%;
+                    height: 100%;
+                    box-sizing: border-box;
+                    @include breakpoint($lg) {
+                        
+                    }
+                    .webSpline{
+                        width: 100%;
+                        @include breakpoint($lg) {
+                            display: none;
+                        }
+                    }
+                    .mobileSpline {
+                        display: none;
+                        width: 100%;
+                        height: 100%;
+                        padding: 0px;
+                        @include breakpoint($lg) {
+                            display: block;
+                        }
+                        canvas {
+                            padding: 30px;
+                        }
+                    }
                 }
             }
         }
+
     }
 }
+

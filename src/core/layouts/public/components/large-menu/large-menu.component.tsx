@@ -12,7 +12,7 @@ const LargeMenuComponent = ({ data, closeMenu }: any) => {
           </div>
         </div>
         <div className={css.menuContainer}>
-          {data.map((category: any, index: number) => (
+          {data.map((category: any) => (
             <div key={category.id} className={css.column}>
               <p className={css.titleName}>{category.link}</p>
               <ul className={css.category}>
@@ -39,7 +39,6 @@ const LargeMenuComponent = ({ data, closeMenu }: any) => {
 };
 
 export default LargeMenuComponent;
-
 
 
 
