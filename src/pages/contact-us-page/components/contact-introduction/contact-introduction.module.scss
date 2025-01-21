@@ -1,0 +1,14 @@
+@import '/src/assets/styles/style.scss';
+
+.introduction {
+    background-image: url('/src/assets/images/statics/about-bg-son.svg');
+    background-position: bottom;
+    width: 100%;
+    background-size: cover;
+    .introductionContainer {
+        background-image: url('/src/assets/images/statics/introduction-line.png');
+        background-position: bottom;
+        width: 100%;
+        background-size: cover;
+    }
+}

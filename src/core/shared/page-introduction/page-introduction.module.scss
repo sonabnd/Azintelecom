@@ -1,0 +1,87 @@
+@import '/src/assets/styles/style.scss';
+
+.introSection {
+    padding-top: rem(200);
+    padding-bottom: rem(160);
+    // display: flex;
+    // justify-content: center;
+    margin: auto;
+    @include breakpoint($lg) {
+        padding-top: rem(90);
+        // padding-left: rem(40);
+        justify-content: start;
+    }
+    .intro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include breakpoint($lg) {
+            flex-direction: column;
+        }
+        .goHome {
+            margin-bottom: rem(24);
+            font-family: $jakartaMedium;
+            display: flex;
+            align-items: center;
+            @include breakpoint($lg) {
+                padding-left: rem(40);
+            }
+            .homeIcon {
+                width: rem(24);
+                height: rem(24);
+                margin-right: rem(8);
+            }
+            .rightIcon {
+                width: rem(20);
+                height: rem(20);
+            }
+            .currentTitle {
+                font-size: rem(14);
+                color: $gray-400;
+                align-items: center;
+                margin-left: rem(8);
+                color: $blue-500;
+            }
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            @include breakpoint($lg) {
+                margin-top: rem(100);
+            }
+            .title {
+                font-size: rem(48);
+                color: $white;
+                font-family: $jakartaBold;
+                font-feature-settings: "ss03";
+                @include breakpoint($lg) {
+                    font-size: rem(24);
+                }
+            }
+            .description {
+                font-size: rem($text);
+                color: $white;
+                margin-top: rem(16);
+                opacity: 50%;
+                @include breakpoint($lg) {
+                    font-size: rem(12);
+                }
+            }
+        }
+        @media (max-width: 991px) {
+            flex-direction: column; // Kiçik ekranlar üçün default vertical düzülmə
+            align-items: center;
+    
+            .goHome {
+                align-self: flex-start; // Solda hizalanır
+            }
+    
+            .content {
+                align-self: center; // Ortada hizalanır
+            }
+        }
+    }
+}

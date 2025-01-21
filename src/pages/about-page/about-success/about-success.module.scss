@@ -1,0 +1,147 @@
+@import '/src/assets/styles/style.scss';
+
+.forTitle {
+    color: $white;
+}
+.forDescription {
+    background: radial-gradient(56.96% 56.96% at 50% 59.38%, #FFFFFF 47%, #697586 100%);
+}
+
+.success {
+    padding-top: rem(96);
+    padding-bottom: rem(96);
+    border-radius: rem(40);
+    border: 1px solid $gray-20;
+    position: relative;
+    z-index: 1;
+    &::before {
+        content: '';
+        background-image: url('/src/assets/images/statics/about-success-left-effect.png');
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        z-index: -1; 
+    }
+    &::after {
+        content: '';
+        background-image: url('/src/assets/images/statics/about-success-right-effect.png');
+            display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    z-index: -1;
+    background-position: 100%;
+    }
+
+    .successContainer {
+        .successList {
+            margin-top: rem(64);
+            .listItem {
+                padding-top: rem(40);
+                padding-bottom: rem(40);
+                margin-bottom: rem(32);
+                border-bottom: 1px solid $gray-700;
+                transition: 0.5s;
+                cursor: pointer;
+                @include breakpoint($lg) {
+                    display: flex;
+                    justify-content: space-between;
+                }
+                &:hover {
+                    background-image: url('/src/assets/images/statics/footer-bg.png');
+                    border-radius: rem(20);
+                    border-bottom: none;
+                    padding-left: rem(30);
+                    padding-right: rem(30);
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                @include breakpoint($sm) {
+                    padding-top: rem(24);
+                    padding-bottom: rem(24);
+                    margin-bottom: rem(12);
+                }
+                .itemLeft {
+                    .text {
+                        color: $white;
+                        font-size: rem(24);
+                        margin-bottom: rem(24);
+                        line-height: rem(32);
+                        font-family: $jakartaSemiBold;
+                        @include breakpoint($lg) {
+                            font-size: rem(18);
+                            margin-bottom: rem(16);
+                            line-height: rem(24);
+                        }
+                    }
+                    .dateCategory{
+                        display: flex;
+                        gap: rem(8);
+                        .date, .category {
+                            background-color: $gray-800;
+                            border-radius: rem(100);
+                            color: $gray-200;
+                            font-size: rem(14);
+                            padding: rem(8) rem(12);
+                            @include breakpoint($lg) {
+                                font-size: rem(12);
+                                padding: rem(6) rem(12);
+                            }
+                        }
+                    }
+                }
+                .itemRight {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    height: 100%;
+                    @include breakpoint($lg) {
+                    }
+                    .img {
+                        img {
+                            width: rem(320);
+                            transition: transform 0.3s ease;  
+                            transform: scale(0);
+                            opacity: 0;
+                            transition: visibility .5s, opacity 0.5s ease, transform 0.5s ease;
+                            margin-top: rem(-56);
+                            @include breakpoint($lg) {
+                                display: none;
+                            }
+                            &.active {
+                                transform: scale(1);
+                                opacity: 1;
+                            }
+                        }
+                    }
+                    .arrow {
+                        width: rem(56);
+                        height: rem(56);
+                        border-radius: rem(100);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: $gray-20;
+                        @include breakpoint($sm) {
+                            width: rem(48);
+                            height: rem(48);
+                        }
+                    }
+                    .active {
+                        background-color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+

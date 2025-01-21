@@ -1,6 +1,9 @@
 export enum Routes {
     default = '/',
     home = '/',
+    about = '/about',
+    career = '/career',
+    contact = '/contact',
 }
 
 export const goTo = (route: string, param: string | number) => {

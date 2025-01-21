@@ -50,51 +50,53 @@ const FooterComponent = () => {
   };
   return (
     <footer>
-      <div className='container-fluid'>
-        <div className={css.footer}>
-            <div className={css.top}>
-              <UsefulLinksComponent />
-            </div>
-          <div className={css.bottom}>
-            <div className='container'>
-              <div className={css.bottomContainer}>
-                <div className={css.bottomInner}>
-                  <div className={css.heading}>
-                    <h2>{translate('footer_heading')}</h2>
-                  </div>
-                  <div className={css.main}>
-                    <div className={css.innerMain}>
-                      <div className={css.footerList}>
-                        {chunkArray(footerList, 4).map((chunk) => (
-                          <ul className={css.list}>
-                            {chunk.map((list) => (
-                              <li key={list.id} >{list.name}</li>
+      <div className={css.allContainer}>
+        <div className='container-fluid'>
+          <div className={css.footer}>
+              <div className={css.top}>
+                <UsefulLinksComponent />
+              </div>
+            <div className={css.bottom}>
+              <div className='container'>
+                <div className={css.bottomContainer}>
+                  <div className={css.bottomInner}>
+                    <div className={css.heading}>
+                      <h2>{translate('footer_heading')}</h2>
+                    </div>
+                    <div className={css.main}>
+                      <div className={css.innerMain}>
+                        <div className={css.footerList}>
+                          {chunkArray(footerList, 4).map((chunk) => (
+                            <ul className={css.list}>
+                              {chunk.map((list) => (
+                                <li key={list.id} >{list.name}</li>
+                              ))}
+                            </ul>
                             ))}
-                          </ul>
-                          ))}
-                      </div>
-                      <div className={css.locationContact}>
-                        <div className={css.location}>
-                          <LocationComponent />
                         </div>
-                        <div className={css.contactSocial}>
-                          <div className={css.contact}><ContactUsComponent /></div>
-                          <div className={css.social}><SocialComponent /></div>
+                        <div className={css.locationContact}>
+                          <div className={css.location}>
+                            <LocationComponent />
+                          </div>
+                          <div className={css.contactSocial}>
+                            <div className={css.contact}><ContactUsComponent /></div>
+                            <div className={css.social}><SocialComponent /></div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div className={css.mobileSocial}>
-                    <SocialComponent/>
-                  </div>
-                  <div className={css.author}>
-                    <div className={css.left}>
-                      <span> {date} © {projectName}.{translate('author_text')}</span>
+                    <div className={css.mobileSocial}>
+                      <SocialComponent/>
                     </div>
-                    <div className={css.right}>
-                      <span>{translate('site')}</span>
-                      <span className={css.projectName}>{projectName} MMC</span>
-                      <span>{translate('site_by')}</span>
+                    <div className={css.author}>
+                      <div className={css.left}>
+                        <span> {date} © {projectName}.{translate('author_text')}</span>
+                      </div>
+                      <div className={css.right}>
+                        <span>{translate('site')}</span>
+                        <span className={css.projectName}>{projectName} MMC</span>
+                        <span>{translate('site_by')}</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -102,6 +104,7 @@ const FooterComponent = () => {
             </div>
           </div>
         </div>
+
       </div>
     </footer>
   )

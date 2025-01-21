@@ -1,0 +1,67 @@
+@import '/src/assets/styles/style.scss';
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  font-feature-settings: 'ss03';
+
+  h2 {
+    font-size: rem($heading);
+    font-family: $jakartaBold;
+    margin-bottom: rem(16);
+
+    @include breakpoint($lg) {
+      font-size: rem(30);
+    }
+
+    @include breakpoint($md) {
+      font-size: rem(30);
+    }
+    @include breakpoint($sm) {
+      font-size: rem(24);
+    }
+  }
+
+  .lineDescription {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    .headingRight {
+      display: flex;
+      align-items: center;
+
+      @include breakpoint($lg) {
+        -webkit-background-clip: text;
+      }
+
+      p {
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: rem(20);
+        @include breakpoint($lg) {
+          font-size: rem(16);
+        }
+        @include breakpoint($sm) {
+          font-size: rem(14);
+        }
+      }
+
+      .headingLine {
+        display: inline-block;
+        width: rem(160);
+        height: rem(1);
+        margin-right: rem(24);
+        background-color: $line-color;
+
+        @include breakpoint($lg) {
+          width: rem(40);
+          margin-right: rem(16);
+        }
+      }
+    }
+  }
+}

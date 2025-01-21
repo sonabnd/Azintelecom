@@ -1,7 +1,6 @@
 import { useCallback, useState } from 'react';
-import css from './hamburger-menu.module.scss'
+import css from './hamburger-menu.module.scss';
 import { FaAngleRight } from "react-icons/fa6";
-
 
 const HamburgerMenuComponent = ({ data }: any) => {
   const [activeItem, setActiveItem] = useState(false);
@@ -10,7 +9,7 @@ const HamburgerMenuComponent = ({ data }: any) => {
   const listItemFunc = useCallback((item, index) => (
     setActiveItem(true),
     setActiveDescription(activeDescription == index ? null : index)
-  ), [])
+  ),[])
 
   return (
     <div className={css.hamburgerMenu}>

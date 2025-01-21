@@ -1,0 +1,121 @@
+@import '/src/assets/styles/style.scss';
+
+.contact {
+    padding-top: rem(96);
+    padding-bottom: rem(96);
+    background-color: $white;
+    background: radial-gradient(100% 100% at 50% 0%, #D0E2FF 0%, #FFFFFF 80%);
+    @include breakpoint($lg) {
+        padding-top: rem(40);
+        padding-bottom: rem(40);
+    }
+    .contactUs {
+        .main {
+            .left {
+                @include breakpoint($lg) {
+                    border-bottom: 1px solid $gray-200;
+                    padding-bottom: rem(32);
+                    margin-bottom: rem(32);
+                }
+                .title {
+                    font-size: rem(40);
+                    font-family: $jakartaBold;
+                    line-height: rem(56);
+                    color: $gray-800;
+                    @include breakpoint($sm) {
+                        font-size: rem(20);
+                        line-height: rem(26);
+                    }
+                    @include breakpoint($lg) {
+                        font-size: rem(30);
+                    }
+                }
+                ul {
+                    margin-top: rem(32);
+                    li {
+                        display: flex;
+                        align-items: center;
+                        color: $gray-600;
+                        line-height: rem(28);
+                        color: $gray-600;
+                        font-size: rem($text);
+                        line-height: rem(28);
+                        font-family: $jakartaMedium;
+                        margin-bottom: rem(32);
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                        @include breakpoint($sm) {
+                            margin-bottom: rem(16);
+                        }
+                        .img {
+                            margin-right: rem(16);
+                            width: rem(36);
+                            height: rem(36);
+                            background-color:$blue-600-08;
+                            border-radius: rem(100);
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            img {
+                                z-index: 1;
+                            }
+                        }
+                        @include breakpoint($sm) {
+                            color: $gray-800;
+                            line-height: rem(20);
+                            font-size: rem(15);
+                        }
+                    }
+                }
+            }
+            .right {
+                margin-left: rem(130);
+                padding-top: rem(10);
+                @include breakpoint($lg) {
+                    margin-left: 0;
+                    padding-top: 0;
+                }
+                input {
+                    padding: rem(16) 0 rem(16) rem(20);
+                    border-radius: rem(12);
+                    background-color: $white;
+                    border: 1px solid $contact-form-border-color;
+                    outline: $border-color;
+                    &:hover {
+                        border-color: $border-color;
+                    }
+                }
+                .fullName {
+                    input {
+                        width: 100%;
+                    }
+                }
+                .mailNumber {
+                    display: flex;
+                    gap: rem(20);
+                    .mail_number {
+                        flex: 1;
+                    }
+                    @include breakpoint($lg) {
+                        flex-direction: column;
+                    }
+                }
+                    button {
+                        border-radius: rem(12);
+                        background-color: $blue-500;
+                        font-family: $jakartaSemiBold;
+                        font-size: rem(15);
+                        text-align: center;
+                        width: rem(200);
+                        height: rem(56);
+                        color: $white;
+                        border: none;
+                        @include breakpoint($lg) {
+                            width: 100%;
+                        }
+                    }
+            }
+        }
+    }
+}

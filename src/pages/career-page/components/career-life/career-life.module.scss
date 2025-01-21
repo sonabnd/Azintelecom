@@ -1,0 +1,105 @@
+@import '/src/assets/styles/style.scss';
+
+.career {
+    .life {
+        padding-top: rem(120);
+        padding-bottom: rem(120);
+        .heading {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: rem(64);
+    
+            @include breakpoint($md) {
+                margin-bottom: rem(32);
+            }
+    
+            h2 {
+                font-size: rem($heading);
+                font-family: $jakartaBold;
+                background: linear-gradient(to right, #FFFFFF, #697586);
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-feature-settings: "ss03";
+    
+                @include breakpoint($md) {
+                    font-size: rem(24);
+                }
+            }
+    
+            .navigation {
+                display: flex;
+                gap: rem(12);
+    
+                @include breakpoint($lg) {
+                    display: none;
+                }
+    
+                div {
+                    width: rem(48);
+                    height: rem(48);
+                    background-color: $gray-800;
+                    border-radius: rem(12);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    position: relative;
+                    z-index: 1;
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        background-image: url('/src/assets/images/statics/button-bg.png');
+                        border-radius: rem(12);
+                        z-index: -1;
+                        opacity: 0;
+                        transition: .2s;
+                    }
+                    &:hover:before {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        .card {
+            .cardInner {
+                position: relative;
+                box-sizing: border-box;
+                .goTo {
+                    background-color: $button-color;
+                    border-radius: rem(10);
+                    display: inline-block;
+                    height: rem(48);
+                    width: rem(107);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    visibility: hidden;
+                    transition: .1s;
+                    a {
+                        color: $white;
+                    }
+                }
+                &:hover .goTo {
+                    visibility: visible;
+                }
+                &:before {
+                    content: '';
+                    background-image: url('/src/assets/images/statics/life-img.png');
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background-repeat: no-repeat;
+                    bottom: 0;
+                    right: 0;
+                }
+            }
+        }
+    }
+}

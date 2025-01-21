@@ -1,0 +1,76 @@
+@import '/src/assets/styles/style.scss';
+
+.sectionContainer{
+    background-image: url('/src/assets/images/statics/about-values-bg.png');
+    padding-top: rem(96);
+    padding-bottom: rem(96);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: rem(24);
+    box-sizing: border-box;
+    .values {
+        .heading {
+            margin-bottom: rem(52);
+        }
+        .main {
+            .mySwiper {
+                height: rem(460);
+                .slider {
+                    .left {
+                        background-color: $blue-500;
+                        border-radius: rem(24) ;
+                        height: 100%;
+                        height: rem(460);
+                        .leftTop {
+                            display: flex;
+                            flex-direction: column;
+                            border-bottom: 1px solid $white-40;
+                            padding: rem(96) rem(24) rem(40);
+                            .number {
+                                font-family: $jakartaSemiBold;
+                                font-size: rem(48);
+                                color: $blue-100;
+                                margin-bottom: rem(56);
+                            }
+                            .title {
+                                margin-bottom: rem(16);
+                                text-transform: uppercase;
+                                color: $white;
+                                font-size: rem(24);
+                                font-family: $jakartaSemiBold;
+                            }
+                            .text {
+                                line-height: rem(20);
+                                color: $white-80;
+                                size: rem(15);
+                            }
+                        }
+                        .leftBottom {
+                            padding-left: rem(24);
+                        }
+                    }
+                    .right {
+                        height: rem(460);
+                        .img {
+                            height: 100%;
+                            width: 100%;
+                            img {
+                                border-radius: rem(24);
+                                object-fit: cover;
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.forTitle {
+    color: $black;
+}
+
+.forDescription {
+    background: radial-gradient(50% 50% at 50% 59.37%, #090909 0%, #616161 100%);
+}

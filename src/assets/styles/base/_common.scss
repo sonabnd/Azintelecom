@@ -20,23 +20,23 @@
     vertical-align: middle;
   }
   
-  @include breakpoint($lg) {
-    html {
-      font-size: 15px;
-    }
-  }
+  // @include breakpoint($lg) {
+  //   html {
+  //     font-size: 15px;
+  //   }
+  // }
   
-  @include breakpoint($md) {
-    html {
-      font-size: 14px;
-    }
-  }
+  // @include breakpoint($md) {
+  //   html {
+  //     font-size: 14px;
+  //   }
+  // }
   
-  @include breakpoint($sm) {
-    html {
-      font-size: 13px;
-    }
-  }
+  // @include breakpoint($sm) {
+  //   html {
+  //     font-size: 13px;
+  //   }
+  // }
   
 
 @media (max-width: 991px) {
@@ -44,4 +44,16 @@
     padding-right: 0; 
     padding-left: 0;
   }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1240px;
+  }
+}
+
+.section {
+  border-radius: 40px;
+  overflow: hidden;
+  margin-bottom: rem(24);
 }

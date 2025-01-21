@@ -1,0 +1,113 @@
+@import '/src/assets/styles/style.scss';
+
+.career {
+    background-color: $blue-800;
+    background-image: url('/src/assets/images/statics/apply-vacancy-img.png');
+    padding: rem(48);
+    border-radius: rem(32);
+    background-size: cover;
+    @include breakpoint($md) {
+        padding: rem(40) rem(16);
+    }
+    .applyVacancy {
+        color: $white;
+        .left {
+            .text {
+                font-family: $jakartaSemiBold;
+                font-size: rem(32);
+                margin-bottom: rem(16);
+                @include breakpoint($md) {
+                    font-size: rem(20);
+                    line-height: rem(26);
+                }
+            }
+            .description {
+                line-height: rem(24);
+                width: 65%;
+                display: inline-block;
+                @include breakpoint($lg) {
+                    width: 100%;
+                }
+            }
+            .file {
+                margin-top: rem(32);
+                display: flex;
+                @include breakpoint($lg) {
+                    flex-direction: column;
+                    font-size: rem(12);
+                }
+                @include breakpoint($md) {
+                    margin-top: rem(24);
+                }
+                input {
+                    padding: rem(16) rem(244) rem(16) rem(32);
+                    background-color: $white-16;
+                    border: none;
+                    outline: none;
+                    border-radius: rem(16);
+                    &::placeholder {
+                        color: $white;
+                        font-size: rem(15);
+                        font-family: $jakartaRegular;
+                        opacity: 70%;
+                    }
+                    @include breakpoint($lg) {
+                        margin-bottom: rem(12);
+                        width: 100%;
+                    }
+                    @include breakpoint($sm) {
+                        padding: rem(18) 0 rem(18) rem(16);
+                    }
+                    @include breakpoint($xl) {
+                        padding: rem(16) rem(32);
+                    }
+                }
+                button {
+                    border-radius: rem(16);
+                    padding: rem(20) rem(27);
+                    font-family: $jakartaSemiBold;
+                    background-color: $bluee-600;
+                    border: none;
+                    outline: none;
+                    color: $white;
+                    margin-left: rem(16);
+                    text-align: center;
+                    cursor: pointer;
+                    @include breakpoint($lg) {
+                        width: 100%;
+                        // padding: 0;
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+        .right {
+            padding-top: rem(32);
+            .contactList {
+                .contactItem {
+                    font-family: $jakartaMedium;
+                    align-items: center;
+                    margin-bottom: rem(24);
+                    line-height: rem(22);
+                    @include breakpoint($sm) {
+                        font-size: rem(13);
+                        line-height: rem(20);
+                        margin-bottom: rem(16);
+                    }
+                    img {
+                        margin-right: rem(8);
+                        width: rem(40);
+                        height: rem(40);
+                        @include breakpoint($sm) {
+                            width: rem(36);
+                            height: rem(36);
+                        }
+                    }
+                    .rightText {
+
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,67 @@
+@import '/src/assets/styles/style.scss';
+
+.forTitle {
+    // background: linear-gradient(90deg, #121926 37.21%, #697586 93.02%);
+    color: $black;
+}
+.forDescription {
+    background: radial-gradient(50% 50% at 50% 59.37%, #090909 0%, #616161 100%);
+}
+.company {
+    background-color: $white;
+    background-image: url('/src/assets/images/statics/company-name-effect.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: rem(96);
+    padding-bottom: rem(96);
+    @include breakpoint($sm) {
+        padding-top: rem(40);
+        padding-bottom: rem(40);
+    }
+    .companyName {
+        margin-bottom: rem(48);
+        @include breakpoint($lg) {
+            margin-bottom: rem(32);
+        }
+    }
+    .left {
+        img {
+            width: rem(656);
+            height: rem(488);
+            border-radius: rem(24);
+            object-fit: cover;
+            @include breakpoint($lg) {
+                width: 100%;
+            }
+        }
+    }
+    .right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include breakpoint($lg) {
+            margin-top: rem(24);
+        }
+        p {
+            background: radial-gradient(68.46% 68.46% at 50% 59.38%, #090909 0%, #55617A 100%);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: $jakartaMedium;
+            line-height: rem(32);
+            font-size: rem($text);
+            @include breakpoint($lg) {
+                line-height: rem(30);
+            }
+            @include breakpoint($sm) {
+                color: $gray-900;
+                line-height: rem(28);
+                font-family: $jakartaRegular;
+                font-size: rem(16);
+            }
+        }
+    }
+}
+
+.secR {
+    // border-radius: rem(40) !important;
+}

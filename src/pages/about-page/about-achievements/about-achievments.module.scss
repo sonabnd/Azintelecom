@@ -1,0 +1,247 @@
+@import '/src/assets/styles/style.scss';
+
+.forTitle {
+    color: $white;
+}
+
+.forDescription {
+    background: radial-gradient(278.27% 278.27% at -178.27% 100%,
+            #111111 0%,
+            #a5a5a5 100%);
+}
+
+.achievements {
+    border-radius: rem(40);
+    position: relative;
+    margin-bottom: rem(24);
+    height: rem(898);
+    position: relative;
+    z-index: 1;
+    border-radius: rem(48);
+    &::before {
+        content: '';
+        position: absolute;
+        background-image: url('/src/assets/images/statics/about-left-effect.png');
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-position: 0;
+        z-index: -1;
+        border-radius: rem(48);
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        background-image: url('/src/assets/images/statics/about-right-effect.png');
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        right: 0;
+        background-position: 100%;
+        z-index: -1;
+        border-radius: rem(48);
+    }
+    @include breakpoint($xl) {
+        padding-bottom: rem(158);
+        padding-top: rem(40);
+    }
+
+    .achievementsContainer {
+        padding-top: rem(96);
+        @include breakpoint($xl) {
+            padding-top: 0;
+        }
+
+        .splineContainer {
+            position: absolute;
+            width: 100%;
+            top: rem(50);
+            left: 0;
+            z-index: -1;
+            height: 100%;
+        }
+
+        .main {
+            z-index: 100;
+            .intro {
+                display: flex;
+                position: relative;
+                justify-content: space-between;
+
+                @include breakpoint($xl) {
+                    flex-wrap: wrap;
+                    margin-top: rem(48);
+                }
+
+                .card {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    background-color: $blue-500;
+                    border-radius: 50%;
+
+                    @include breakpoint($xl) {
+                        width: 49%;
+                        height: rem(120);
+                        padding: rem(26) rem(16);
+                        border-radius: 0%;
+                        margin-bottom: rem(4);
+                        gap: 4;
+                        background-image: url('/src/assets/images/statics/achievements-bg-noise.png');
+                        background-size: cover;
+                        background-color: $gray-20;
+                        border-radius: rem(24);
+                    }
+
+                    .number {
+                        font-family: $jakartaBold;
+                        font-size: rem(35);
+                        line-height: rem(44);
+                        color: $white;
+
+                        @include breakpoint($lg) {
+                            font-size: rem(24);
+                            line-height: rem(32);
+                        }
+                    }
+
+                    .text {
+                        color: $white-80;
+                        font-size: rem($text);
+
+                        @include breakpoint($lg) {
+                            color: $white-40;
+                            font-size: rem(12);
+                            line-height: rem(18);
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+
+.card-1 {
+    width: rem(290);
+    height: rem(290);
+    position: relative;
+    animation: slideUpCard1 2s ease-out forwards;
+    animation-fill-mode: both;
+    transform-origin: center center;
+}
+
+.card-2 {
+    width: rem(360);
+    height: rem(360);
+    animation: slideUpCard2 2s ease-out forwards;
+    animation-fill-mode: both;
+    transform-origin: center center;
+    animation-delay: .1s;
+    position: relative;
+    transform: translate(50vw, calc(100vh - 100px));
+}
+
+.card-3 {
+    width: rem(312);
+    height: rem(312);
+    animation: slideUpCard3 2s ease-out forwards;
+    animation-fill-mode: both;
+    transform-origin: center center;
+    position: relative;
+    transform: translate(50vw, calc(100vh - 100px));
+}
+
+.card-4 {
+    width: rem(224);
+    height: rem(224);
+    animation: slideUpCard4 2s ease-out forwards;
+    animation-fill-mode: both;
+    transform-origin: center center;
+    position: relative;
+    transform: translate(50vw, calc(100vh - 100px));
+}
+
+
+
+@keyframes slideUpCard1 {
+    0% {
+        transform: translate(25vw, calc(100vh - 100px));
+    }
+    40% {
+        transform: translate(-20px, 40px);
+        scale: 1.05;
+        transform-origin: center center;
+    }
+    70% {
+        transform: translate(2px, 64px);
+        scale: .99;
+    }
+    100% {
+        transform: translateY(62px);
+        scale: 1;
+    }
+}
+
+@keyframes slideUpCard2 {
+    0% {
+        transform: translate(25vw, calc(100vh - 100px));
+    }
+    40% {
+        transform: translate(-20px, 170px);
+        scale: 1.05;
+        transform-origin: center center;
+    }
+    70% {
+        transform: translate(2px, 190px);
+        scale: .99;
+    }
+    100% {
+        transform: translateY(192px);
+        scale: 1;
+    }
+}
+
+@keyframes slideUpCard3 {
+    0% {
+        transform: translate(-10vw, calc(100vh - 100px));
+    }
+    40% {
+        transform: translate(20px, -10px);
+        scale: 1.05;
+        transform-origin: center center;
+    }
+    70% {
+        transform: translate(2px, 36px);
+        scale: .99;
+    }
+    
+    100% {
+        transform: translateY(34px);
+        scale: 1;
+    }
+}
+
+@keyframes slideUpCard4 {
+    0% {
+        transform: translate(-11vw, calc(100vh - 100px));
+    }
+    40% {
+        transform: translate(20px, 274px);
+        scale: 1.05;
+        transform-origin: center center;
+    }
+    70% {
+        transform: translate(2px, 294px);
+        scale: .99;
+    }
+    100% {
+        transform: translateY(296px);
+        scale: 1;
+    }
+}

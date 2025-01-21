@@ -65,6 +65,7 @@ const UsefulLinksComponent = () => {
         swiperRef.current.swiper.slidePrev();
       };
     }, [])
+    
     return (
         <div className={css.footerTop}>
             <div className='container'>

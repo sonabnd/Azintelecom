@@ -1,0 +1,81 @@
+@import '/src/assets/styles/style.scss';
+
+.contact {
+    background: radial-gradient(100% 100% at 50% 0%, #D0E2FF 0%, #FFFFFF 80%);
+    background-color: $white;
+    padding-top: rem(96);
+    padding-bottom: rem(96);
+
+    @include breakpoint($lg) {
+        padding-top: rem(40);
+        padding-bottom: rem(40);
+    }
+
+    .contactSchedule {}
+}
+
+.forTitle {
+    color: $black;
+}
+
+.forDescription {
+    background: radial-gradient(50% 50% at 50% 59.37%, #090909 0%, #616161 100%);
+    width: 50%;
+}
+
+.headingDescription {
+    justify-content: flex-end;
+    text-align: right;
+}
+
+
+.schedule {
+    padding: rem(16) rem(16) 0 rem(16);
+    border-radius: rem(24);
+    border: 1px solid $gray-200;
+    background-color: $white;
+    margin-top: rem(48);
+    font-feature-settings: "ss03";
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    @include breakpoint($lg) {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch; 
+    }
+
+
+    .customTable {
+        min-width: 800px;
+        table-layout: auto;
+        color: $gray-800 !important;
+        tr td {
+            font-family: $jakartaSemiBold;
+            font-size: rem($text);
+            &:last-child {
+                font-family: $jakartaRegular;
+                font-size: rem(15);
+            }
+            @include breakpoint($sm) {
+                font-size: rem(16);
+            }
+        }
+        th td {
+            font-family: $jakartaMedium;
+            font-size: rem(15);
+            @include breakpoint($sm) {
+                font-size: rem(14);
+            }
+        }
+        tr:hover {
+            background-color: $white !important;
+        }
+        th {
+            background-color: $gray-100 !important;
+        }
+    }
+
+
+
+}
