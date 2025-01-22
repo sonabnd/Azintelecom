@@ -147,6 +147,7 @@ export const az = {
     form_message: 'Bu xana mütləqdir',
     mail_message: 'Düzgün e-poçt ünvanı daxil edin',
     contact_us: 'Bizimlə əlaqə',
+    contact_description: 'Lorem ipsum dolor sit amet consectetur. Ultricies a facilisi ut quis non.',
     linkedin: 'Linkedin',
-    
+
 }

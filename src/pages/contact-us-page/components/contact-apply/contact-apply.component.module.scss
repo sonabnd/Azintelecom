@@ -24,10 +24,11 @@
                     color: $gray-800;
                     @include breakpoint($sm) {
                         font-size: rem(20);
-                        line-height: rem(26);
+                        line-height: rem(28);
                     }
                     @include breakpoint($lg) {
                         font-size: rem(30);
+                        line-height: rem(32);
                     }
                 }
                 ul {

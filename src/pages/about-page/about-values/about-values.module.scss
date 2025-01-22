@@ -8,6 +8,9 @@
     background-size: cover;
     margin-top: rem(24);
     box-sizing: border-box;
+    @include breakpoint($lg) {
+        display: none;
+    }
     .values {
         .heading {
             margin-bottom: rem(52);
@@ -15,10 +18,8 @@
         .main {
             .mySwiper {
                 height: rem(460);
-                .slider {
                     .left {
                         background-color: $blue-500;
-                        border-radius: rem(24) ;
                         height: 100%;
                         height: rem(460);
                         .leftTop {
@@ -45,9 +46,6 @@
                                 size: rem(15);
                             }
                         }
-                        .leftBottom {
-                            padding-left: rem(24);
-                        }
                     }
                     .right {
                         height: rem(460);
@@ -62,11 +60,46 @@
                             }
                         }
                     }
+                    &:first-child {
+                        border-radius: rem(24);
+                    }
+            }
+            .leftBottom {
+                padding-left: rem(24);
+                position: absolute;
+                bottom: rem(34);
+                z-index: 5;
+                .customPagination {
+                    display: flex;
+                    gap: rem(8);
+                    margin-top: rem(24);
+                    z-index: 20;
+                    cursor: pointer;
                 }
             }
         }
     }
 }
+
+:global(.swiper-pagination-bullet) {
+    width: rem(8);
+    height: rem(8);
+    border-radius: rem(32);
+    cursor: pointer;
+    background-color: $blue-300;
+    transition: .3s ease;
+}
+
+:global(.swiper-pagination-bullet-active) {
+    background-color: $white;
+    width: rem(80);
+    height: rem(8);
+}
+
+.paginationSwiper {
+    position: relative;
+}
+
 .forTitle {
     color: $black;
 }
@@ -74,3 +107,5 @@
 .forDescription {
     background: radial-gradient(50% 50% at 50% 59.37%, #090909 0%, #616161 100%);
 }
+
+

@@ -6,6 +6,8 @@ import { Routes } from "./routes";
 import AboutPageComponent from "../pages/about-page/about-page.component";
 import CareerPageComponent from "../pages/career-page/career-page.component";
 import ContactUsComponent from "../pages/contact-us-page/contact-us-page.component";
+import MuzuComponent from "../pages/about-page/muzu/muzu.component";
+import NotFoundComponent from "../pages/not-found/not-found.component";
 
 const router = createBrowserRouter([
     {
@@ -27,6 +29,10 @@ const router = createBrowserRouter([
                 path: Routes.contact,
                 element: <ContactUsComponent/>
             },
+            {
+                path: '*',
+                element: <NotFoundComponent/>
+            }
         ]
 
     }

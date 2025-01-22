@@ -1,124 +1,209 @@
-// import css from './contact-map.module.scss'
-
-// const ContactMapComponent = () => {
-
-//   return (
-//     <div className={css.contact}>
-//         <section>
-//             <div className="container">
-//                 <div className={css.map}>
-
-//                 </div>
-//             </div>
-//         </section>
-//     </div>
-//   )
-// }
-
-// export default ContactMapComponent
-
-
 import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
+import css from './contact-map.module.scss';
 
 const libraries = ['places'];
+
 const mapContainerStyle = {
-  width: '100vw',
-  height: '100vh',
+  width: '100%',
+  height: '720px',
 };
+
 const center = {
-  lat: 7.2905715, 
-  lng: 80.6337262, 
+  lat: 40.380565248338804,
+  lng: 49.8332817067833 
 };
 
-const ContactMapComponent = () => {
-  const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: 'AIzaSyA9XjKunhKb4Gkgg4MLTgQ0pXCenEwSIsM',
-    libraries,
-  });
+const markerIcon = {
+  url: '/src/assets/images/statics/map-textİcon.png', 
+};
 
-  if (loadError) {
-    return <div>Error loading maps</div>;
-  }
+const mapStyles = [
+    {
+      featureType: 'all',
+      elementType: 'geometry',
+      stylers: [
+        {
+          visibility: 'simplified',
+        },
+      ],
+    },
+    {
+      featureType: 'road',
+      elementType: 'labels',
+      stylers: [
+        {
+          visibility: 'on',
+        },
+      ],
+    },
+    {
+      featureType: 'poi',
+      elementType: 'labels',
+      stylers: [
+        {
+          visibility: 'off',
+        },
+      ],
+    },
+    {
+      featureType: 'landscape',
+      elementType: 'labels',
+      stylers: [
+        {
+          visibility: 'off',
+        },
+      ],
+    },
+    {
+      featureType: 'transit',
+      elementType: 'labels',
+      stylers: [
+        {
+          visibility: 'off',
+        },
+      ],
+    },
+    { elementType: "geometry", stylers: [{ color: "#242f3e" }] },
+    { elementType: "labels.text.stroke", stylers: [{ color: "#242f3e" }] },
+    { elementType: "labels.text.fill", stylers: [{ color: "#746855" }] },
+    {
+      featureType: "administrative.locality",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#d59563" }],
+    },
+    {
+      featureType: "poi",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#d59563" }],
+    },
+    {
+      featureType: "poi.park",
+      elementType: "geometry",
+      stylers: [{ color: "#263c3f" }],
+    },
+    {
+      featureType: "poi.park",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#6b9a76" }],
+    },
+    {
+      featureType: "road",
+      elementType: "geometry",
+      stylers: [{ color: "#38414e" }],
+    },
+    {
+      featureType: "road",
+      elementType: "geometry.stroke",
+      stylers: [{ color: "#212a37" }],
+    },
+    {
+      featureType: "road",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#9ca5b3" }],
+    },
+    {
+      featureType: "road.highway",
+      elementType: "geometry",
+      stylers: [{ color: "#746855" }],
+    },
+    {
+      featureType: "road.highway",
+      elementType: "geometry.stroke",
+      stylers: [{ color: "#1f2835" }],
+    },
+    {
+      featureType: "road.highway",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#f3d19c" }],
+    },
+    {
+      featureType: "transit",
+      elementType: "geometry",
+      stylers: [{ color: "#2f3948" }],
+    },
+    {
+      featureType: "transit.station",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#d59563" }],
+    },
+    {
+      featureType: "water",
+      elementType: "geometry",
+      stylers: [{ color: "#17263c" }],
+    },
+    {
+      featureType: "water",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#515c6d" }],
+    },
+    {
+      featureType: "water",
+      elementType: "labels.text.stroke",
+      stylers: [{ color: "#17263c" }],
+    },
+    {
+      featureType: "road",
+      elementType: "labels.text.fill",
+      stylers: [{ color: 'white' }],  
+    },
+  ];
 
-  if (!isLoaded) {
-    return <div>Loading maps</div>;
-  }
+  const ContactMapComponent = () => {
+    const { isLoaded, loadError } = useLoadScript({
+      googleMapsApiKey: 'AIzaSyA9XjKunhKb4Gkgg4MLTgQ0pXCenEwSIsM',
+      libraries,
+    });
+  
+    if (loadError) {
+      return <div>Error loading maps</div>;
+    }
+  
+    if (!isLoaded) {
+      return <div>Loading maps</div>;
+    }
+  
+    const options = {
+      disableDefaultUI: true,
+      zoomControl: false,
+      styles: mapStyles,
+    };
 
-  return (
-    <div>
-      <GoogleMap
-        mapContainerStyle={mapContainerStyle}
-        zoom={10}
-        center={center}
+    const dynamicHeight = window.innerWidth <= 991 ? '480px' : '720px';
+    
+    return (
+      <div className={css.map}
+      style={{
+        overflow: 'hidden',
+        borderRadius: '40px',
+        position: 'relative',
+        background:
+          'radial-gradient(49.81% 49.81% at 50% 50.19%, rgba(13, 18, 28, 0.32) 0%, rgba(13, 18, 28, 0.64) 100%)',
+      }}
       >
-        <Marker position={center} />
-      </GoogleMap>
-    </div>
-  );
-};
+        <GoogleMap
+                  mapContainerStyle={{
+                    ...mapContainerStyle,
+                    height: dynamicHeight,
+                  }}
+          zoom={17}
+          center={center}
+          options={options}
+        >
+          <div style={{
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',     
+        }}>
+          <Marker position={center} icon={markerIcon} />
+        
+        </div>
+        </GoogleMap>
+      </div>
+    );
+  };
 
 export default ContactMapComponent;
-
-
-// import { useEffect } from "react";
-// import css from './contact-map.module.scss';
-
-// const ContactMapComponent = () => {
-//   useEffect(() => {
-//     const script = document.createElement("script");
-//     script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyA9XjKunhKb4Gkgg4MLTgQ0pXCenEwSIsM&callback=initMap`;
-//     script.async = true;
-//     script.defer = true;
-//     document.body.appendChild(script);
-
-//     window.initMap = () => {
-//       const mapOptions = {
-//         center: { lat: 40.4093, lng: 49.8671 }, // Bakı koordinatları
-//         zoom: 14,
-//         styles: mapStyle, // Stil tətbiqi
-//         disableDefaultUI: true, // Bütün interfeys elementlərini gizlədir
-//         mapTypeControl: false, // "Map" və "Satellite" düymələrini gizlədir
-//         fullscreenControl: false, // Tam ekran düyməsini gizlədir
-//         streetViewControl: false, // Street View düyməsini gizlədir
-//         zoomControl: false, // Zoom düymələrini gizlədir
-//       };
-
-//       new window.google.maps.Map(document.getElementById("map"), mapOptions);
-//     };
-
-//     return () => {
-//       document.body.removeChild(script);
-//     };
-//   }, []);
-
-//   return (
-//     <div className={css.contact}>
-//       <section>
-//         <div className="container">
-//           <div id="map" className={css.map} style={{ height: "400px", width: "100%" }}>
-//             {/* Xəritə buraya yüklənəcək */}
-//           </div>
-//         </div>
-//       </section>
-//     </div>
-//   );
-// };
-
-// export default ContactMapComponent;
-
-// const mapStyle = [
-//   {
-//     "elementType": "geometry",
-//     "stylers": [{ "color": "#212121" }]
-//   },
-//   {
-//     "elementType": "labels.text.fill",
-//     "stylers": [{ "color": "#757575" }]
-//   },
-//   {
-//     "featureType": "all",
-//     "elementType": "labels",
-//     "stylers": [{ "visibility": "on" }]
-//   }
-// ];
-

@@ -3,6 +3,8 @@ import css from './apply-vacancy.module.scss';
 import telephoneIcon from '/src/assets/images/icons/telephone-icon.png';
 import mailIcon from '/src/assets/images/icons/mail-icon.png';
 import locationIcon from '/src/assets/images/icons/location-icon.png';
+import { Upload, Button } from 'antd';
+import { UploadOutlined } from '@ant-design/icons';
 
 const ApplyVacancyComponent = () => {
     const translate = useLocalization();
@@ -23,6 +25,14 @@ const ApplyVacancyComponent = () => {
             text: translate('location'),
         },
     ]
+
+    const uploadProps = {
+        beforeUpload: (file) => {
+            console.log(file); // Fayl yükləməzdən əvvəl işlənən funksiya
+            return false; // Faylın dərhal serverə yüklənməməsi üçün
+        },
+    };
+
     return (
         <div className={css.career}>
             <div className='container'>
@@ -33,7 +43,13 @@ const ApplyVacancyComponent = () => {
                                 <p className={css.text}>{translate('apply_vacancy_text')}</p>
                                 <span className={css.description}>{translate('apply_vacancy_description')}</span>
                                 <div className={css.file}>
-                                    <input type="text" placeholder={translate('apply_vacancy_placeholder')} />
+                                    <label className={css.fileUpload}  htmlFor="file-upload">Faylı yükləyin...</label>
+                                    <input style={{display:'none'}} id='file-upload' type="file" placeholder={translate('apply_vacancy_placeholder')} />
+                                    {/* <Upload {...uploadProps} className={css.fileUpload}>
+                                        <Button className={css.uploadButton}>
+                                            Fayl yukle.
+                                        </Button>
+                                    </Upload> */}
                                     <button>{translate('send_cv')}</button>
                                 </div>
                             </div>

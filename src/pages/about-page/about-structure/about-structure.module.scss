@@ -8,6 +8,10 @@
     padding-top: rem(96);
     padding-bottom: rem(118);
     box-sizing: border-box;
+    @include breakpoint($lg) {
+        padding-top: rem(40);
+        padding-bottom: rem(40);
+    }
     .structureContainer {
         .nameList {
             height: rem(442);
@@ -15,14 +19,22 @@
             scrollbar-width: none;
             cursor: pointer;
             margin-top: rem(48);
+            @include breakpoint($lg) {
+                margin-top: rem(32);
+            }
             .listItem {
                 padding: rem(24) rem(16);
                 border-bottom: 1px solid $gray-200;
                 transition: .7s;
+
                 &:hover {
                     border-left: rem(8) solid $blue-500;
                     background-color: $blue-100;
                 }
+                @include breakpoint($lg) {
+                    padding: rem(20) rem(20) rem(12) rem(20);
+                }
+
                 .name {
                     font-size: rem(32);
                     background: linear-gradient(90deg, #202939 40%, #697586 100%);
@@ -30,22 +42,32 @@
                     -webkit-text-fill-color: transparent;
                     margin-bottom: rem(4);
                     font-family: $jakartaSemiBold;
+                    @include breakpoint($md) {
+                        font-size: rem(18);
+                    }
                 }
+
                 .description {
                     color: $gray-500;
                     font-size: rem(15);
                     color: $gray-500;
+                    @include breakpoint($md) {
+                        font-size: rem(12);
+                    }
                 }
             }
         }
+
         .imgContainer {
             margin-top: rem(48);
             width: rem(464);
             height: rem(546);
             margin-left: rem(48);
+
             @include breakpoint($lg) {
                 display: none;
             }
+
             .img {
                 img {
                     width: 100%;
@@ -54,27 +76,29 @@
                 }
             }
         }
-        .details {
-            background-image: url('/src/assets/images/statics/noise-details.png');
-            background-color: $gray-90;
-            background-repeat: no-repeat;
-            background-size: cover;
-            position: relative;
-            padding-left: rem(80);
-            padding-bottom: rem(80);
-            border-radius: rem(40);
+
+        .structureDetails {
             position: fixed;
-            top: rem(100);
-            left: rem(150);
-            right: rem(150);
+            top: 0;
+            left: 50%;
+            right: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
             width: 80%;
             z-index: 99999;
+            scrollbar-width: none;
+            background-image: url('/src/assets/images/statics/noise-details.png');
+            background-color: $structure-bg;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100%;
+
+            overflow-y: auto;
+            overflow-x: hidden;
             @include breakpoint($lg) {
-                padding-bottom: rem(24);
-                padding-left: 0;
-                overflow: auto;
+                width: 90%;
             }
-            z-index: 1;
+
             &::before {
                 background-image: url('/src/assets/images/statics/details-left-effect.png');
                 content: "";
@@ -87,147 +111,207 @@
                 background-position: top left;
                 z-index: -1;
                 border-radius: rem(40);
+                @include breakpoint($lg) {
+                    display: none;
+                }
+
             }
+
             &::after {
                 background-image: url('/src/assets/images/statics/details-right-effect.png');
                 content: "";
                 position: absolute;
                 right: 0;
-                bottom: 0;
+                top: 0;
                 width: 100%;
                 height: 100%;
                 background-repeat: no-repeat;
-                background-position: bottom right;
+                background-position: 100%;
                 z-index: -1;
                 border-radius: rem(40);
-            }
-            .detailsHeading {
-                display: flex;
-                justify-content: flex-end;
                 @include breakpoint($lg) {
-                    position: absolute;
-                    top: 0;
-                    right: 0;
+                    display: none;
                 }
-                .close {
-                    width: rem(40);
-                    height: rem(40);
-                    border-radius: 50%;
-                    margin-right: rem(24);
-                    margin-top: rem(24);
-                    margin-bottom: rem(16);
-                    cursor: pointer;
-                    @include breakpoint($lg) {
-                        margin-bottom: 0;
-                    }
-                    img {
+            }
 
-                    }
-                }
-            }
-            .img {
-                width: rem(496);
-                height: rem(560);
+            .details {
+                padding: rem(80) rem(80) rem(44) rem(80);
+                position: relative;
+
                 @include breakpoint($lg) {
-                    margin-top: 0;
-                    width: 100%;
+                    padding: 0;
+                    padding-bottom: rem(24);
+                    padding-left: 0;
+                    overflow: auto;
                 }
-                img {
-                    border-radius: rem(24);
-                    height: 100%;
-                    width: 100%;
-                }
-            }
-            .detailsRight {
-                margin-right: rem(80);
-                @include breakpoint($lg) {
-                    margin-left: rem(24);
-                    margin-right: rem(24);
-                    margin-top: rem(16);
-                    font-size: rem(14);
-                }
-                .birthOfDay {
-                    margin-bottom: rem(16);
-                    margin-top: rem(16);
-                    .birthText {
-                        color: $gray-400;
-                    }
-                    .birthDate {
-                        color: white;
-                        margin-left: rem(8);
-                        font-family: $jakartaSemiBold;
-                    }
-                }
-                .detailsDescription {
-                    color: white;
-                    font-size: rem(15);
-                    line-height: rem(26);
-                    @include breakpoint($sm) {
-                        font-size: rem(14);
-                        line-height: rem(20);
-                    }
-                }
-                .contact {
-                    background-color: $blue-600;
-                    border-radius: rem(100);
+
+                .detailsHeading {
                     display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    padding: rem(4) rem(16) rem(4) rem(16);
-                    width: rem(352);
-                    margin-top: rem(40) ;
-                    cursor: pointer;
+                    justify-content: flex-end;
+
                     @include breakpoint($lg) {
-                        margin-top: rem(32);
+                        position: absolute;
+                        top: 0;
+                        right: 0;
                     }
-                    @include breakpoint($sm) {
-                        width: rem(284);
-                    }
-                    .linkedin {
+
+                    .close {
+                        position: absolute;
+                        right: rem(24);
+                        top: rem(24);
                         width: rem(40);
                         height: rem(40);
+                        border-radius: 50%;
+                        margin-bottom: rem(14);
+                        cursor: pointer;
+
+                        @include breakpoint($lg) {
+                            margin-bottom: 0;
+                        }
                     }
-                    .message {
-                        width: rem(24);
-                        height: rem(24);
-                        margin-right: rem(8);
+                }
+
+                .img {
+                    height: rem(560);
+
+                    @include breakpoint($lg) {
+                        margin-top: 0;
+                        width: 100%;
                     }
-                    .contactLine {
-                        width: rem(1);
-                        height: rem(24);
-                        background-color: $blue-4;
-                        margin-left: rem(12);
-                        margin-right: rem(12);
+
+                    img {
+                        border-radius: rem(24);
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
                     }
-                    .mailAdress {
+                    padding: 0;
+                }
+
+                .detailsRight {
+                    margin-left: rem(64);
+                    @include breakpoint($lg) {
+                        margin-left:rem(24);
+                        margin-right: rem(24);
+                        margin-top: rem(16);
                         font-size: rem(14);
-                        font-family: $jakartaMedium;
-                        color: $blue-100;
+                    }
+
+                    .birthOfDay {
+                        margin-bottom: rem(16);
+                        margin-top: rem(16);
+
+                        .birthText {
+                            color: $gray-400;
+                        }
+
+                        .birthDate {
+                            color: white;
+                            margin-left: rem(8);
+                            font-family: $jakartaSemiBold;
+                        }
+                    }
+
+                    .detailsDescription {
+                        color: white;
+                        font-size: rem(15);
+                        line-height: rem(26);
+
+                        @include breakpoint($sm) {
+                            font-size: rem(14);
+                            line-height: rem(20);
+                        }
+                    }
+
+                    .contact {
+                        background-color: $blue-600;
+                        border-radius: rem(100);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: rem(4) rem(16) rem(4) rem(16);
+                        width: rem(352);
+                        margin-top: rem(40);
+                        cursor: pointer;
+
+                        @include breakpoint($lg) {
+                            margin-top: rem(32);
+                            width: 100%;
+                        }
+
+                        .linkedin {
+                            width: rem(40);
+                            height: rem(40);
+                            @include breakpoint($lg) {
+                                width: rem(32);
+                                height: rem(32);
+                            }
+                        }
+
+                        .message {
+                            width: rem(24);
+                            height: rem(24);
+                            margin-right: rem(8);
+                            @include breakpoint($lg) {
+                                width: rem(20);
+                                height: rem(20);
+                            }
+                        }
+
+                        .contactLine {
+                            border: 1px solid $blue-4;
+                            height: rem(24);
+                            margin-left: rem(12);
+                            margin-right: rem(12);
+                            @include breakpoint($lg) {
+                                margin-left: rem(6);
+                                margin-right: rem(6);
+                            }
+                        }
+
+                        .mailAdress {
+                            font-size: rem(14);
+                            font-family: $jakartaMedium;
+                            color: $blue-100;
+                            @include breakpoint($lg) {
+                                font-size: rem(12);
+                            }
+                        }
                     }
                 }
             }
         }
     }
 }
+
 .forTitle {
-    // background: linear-gradient(90deg, #121926 20.87%, #697586 52.17%);
-    color: $black;
+    color: $gray-800;
 }
+
 .forDescription {
     background: radial-gradient(50% 50% at 50% 59.37%, #090909 0%, #616161 100%);
+
 }
 
 .detailsFullName {
-    background: linear-gradient(90deg, #FFFFFF 0%, #697586 37.28%);
+    color: $white;
     font-size: rem(40);
+
     @include breakpoint($sm) {
         font-size: rem(24);
     }
 }
+
 .detailsPosition {
-    background: radial-gradient(69.76% 792.51% at -14.53% 100%, #697586 0%, #FFFFFF 100%);
+    background: radial-gradient(56.96% 56.96% at 50% 59.38%, #fff 47%, #697586 100%);
     font-size: rem(18);
     @include breakpoint($sm) {
         font-size: rem(14);
     }
 }
+
+.bodyNoScroll {
+    overflow: hidden;
+    background-color: red !important;
+    height: 100vh;
+  }

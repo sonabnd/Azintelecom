@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import useLocalization from '../../../assets/lang';
 import css from './about-structure.module.scss';
 import SectionTitleComponent from '../../../core/shared/section-title/section-title.component';
@@ -91,6 +91,18 @@ const AboutStructureComponent = () => {
     setDetailsActive(item);
   }, [])
   
+  useEffect(() => {
+
+    if (detailsActive) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = ''; 
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [detailsActive]);
+
   return (
     <div className='section'>
       <div className={css.structure}>
@@ -137,41 +149,43 @@ const AboutStructureComponent = () => {
               </div>
               {
                 detailsActive && (
-                  <div className={css.details}>
-                    <div className={css.detailsHeading}>
-                      <div className={css.close} onClick={() => setDetailsActive(false)}>
-                        <img src={close} alt={translate('img_alt')} />
+                  <div className={css.structureDetails}>
+                      <div className={css.details}>
+                        <div className={css.detailsHeading}>
+                          <div className={css.close} onClick={() => setDetailsActive(false)}>
+                            <img src={close} alt={translate('img_alt')} />
+                          </div>
+                        </div>
+                        <div className='row' style={{margin: 0}}>
+                            <div className='col-lg-6' style={{padding: 0}}>
+                              <div className={css.img}>
+                                <img src={detailsActive.img} alt={translate('img_alt')} />
+                              </div>
+                            </div>
+                            <div className='col-lg-6' style={{padding: 0}}>
+                              <div className={css.detailsRight}>
+                                <SectionTitleComponent 
+                                title={detailsActive.name} 
+                                description={detailsActive.description}
+                                forTitle={css.detailsFullName}
+                                forDescription={css.detailsPosition}
+                                />
+                                <div className={css.birthOfDay}>
+                                  <span className={css.birthText}>{translate('birthday')}</span>
+                                  <span className={css.birthDate}>{detailsActive.dateOfBirth}</span>
+                                </div>
+                                <p className={css.detailsDescription}>{detailsActive.nameDetails}</p>
+                                <div className={css.contact}>
+                                  <img className={css.linkedin} src={linkedin} alt={translate('img_alt')} />
+                                  <div className={css.contactLine}></div>
+                                  <img className={css.message} src={message} alt={translate('img_alt')} />
+                                  <p className={css.mailAdress}>{detailsActive.mail}</p>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
                       </div>
                     </div>
-                    <div className='row'>
-                        <div className='col-lg-6'>
-                          <div className={css.img}>
-                            <img src={detailsActive.img} alt={translate('img_alt')} />
-                          </div>
-                        </div>
-                        <div className='col-lg-6'>
-                          <div className={css.detailsRight}>
-                            <SectionTitleComponent 
-                            title={detailsActive.name} 
-                            description={detailsActive.description}
-                            forTitle={css.detailsFullName}
-                            forDescription={css.detailsPosition}
-                            />
-                            <div className={css.birthOfDay}>
-                              <span className={css.birthText}>{translate('birthday')}</span>
-                              <span className={css.birthDate}>{detailsActive.dateOfBirth}</span>
-                            </div>
-                            <p className={css.detailsDescription}>{detailsActive.nameDetails}</p>
-                            <div className={css.contact}>
-                              <img className={css.linkedin} src={linkedin} alt={translate('img_alt')} />
-                              <span className={css.contactLine}></span>
-                              <img className={css.message} src={message} alt={translate('img_alt')} />
-                              <p className={css.mailAdress}>{detailsActive.mail}</p>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-                  </div>
                 )
               }
             </div>

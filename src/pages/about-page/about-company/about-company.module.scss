@@ -1,7 +1,6 @@
 @import '/src/assets/styles/style.scss';
 
 .forTitle {
-    // background: linear-gradient(90deg, #121926 37.21%, #697586 93.02%);
     color: $black;
 }
 .forDescription {
@@ -14,7 +13,7 @@
     background-repeat: no-repeat;
     padding-top: rem(96);
     padding-bottom: rem(96);
-    @include breakpoint($sm) {
+    @include breakpoint($lg) {
         padding-top: rem(40);
         padding-bottom: rem(40);
     }

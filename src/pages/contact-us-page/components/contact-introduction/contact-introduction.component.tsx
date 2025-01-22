@@ -9,8 +9,8 @@ const ContactIntroductionComponent = () => {
         <section className={css.introduction}>
             <div className={css.introductionContainer}>
                 <PageIntroductionComponent
-                title = {translate('career_title')} 
-                description ={translate('career_description')}
+                title = {translate('contact_us')} 
+                description ={translate('contact_description')}
                 />
             </div>
         </section>

@@ -1,5 +1,9 @@
 {
   "name": "google-maps-app",
   "version": "0.1.0",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "@react-google-maps/api": "^2.20.5",
+    "use-places-autocomplete": "^4.0.1"
+  }
 }
