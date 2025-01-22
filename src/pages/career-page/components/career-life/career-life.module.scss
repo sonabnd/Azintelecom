@@ -6,6 +6,7 @@
     background-image: url('/src/assets/images/statics/life-bg.png');
     background-repeat: no-repeat;
     border-radius: rem(48);
+    margin-top: rem(24);
     &::before {
         content: '';
         position: absolute;
