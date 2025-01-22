@@ -3,7 +3,6 @@ import css from './contact-apply.component.module.scss';
 import location from '/src/assets/images/icons/locationn.png';
 import telephone from '/src/assets/images/icons/call.png';
 import mail from '/src/assets/images/icons/emaill.png';
-// import { Input, Button } from 'antd';
 import { Form, Input, Button } from 'antd';
 
 

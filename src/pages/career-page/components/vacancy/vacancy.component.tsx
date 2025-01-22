@@ -4,8 +4,6 @@ import ApplyVacancyComponent from '../apply-vacancy/apply-vacancy-component';
 import css from './vacancy.module.scss';
 import { HiArrowLongRight } from "react-icons/hi2";
 
-
-
 const VacancyComponent = () => {
     const vacancyData = [
         {

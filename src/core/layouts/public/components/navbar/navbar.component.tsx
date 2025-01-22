@@ -78,6 +78,7 @@ const NavbarComponent = ({ data }: any) => {
                                   >
                                     {chunk.map((dropdown) => (
                                       <li
+                                        
                                         key={dropdown.id}
                                         className={css.dropdownItem}
                                         onClick={(e) => e.stopPropagation()}

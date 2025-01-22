@@ -3,13 +3,12 @@ import ContactInformationComponent from './components/contact-information/contac
 import ContactIntroductionComponent from './components/contact-introduction/contact-introduction.component';
 import ContactMapComponent from './components/contact-map/contact-map.component';
 import ContactScheduleComponent from './components/contact-schedule/contact-schedule.component';
-import css from './contact-us-page.module.scss';
 
 const ContactUsComponent = () => {
   return (
     <div>
             <div className='container-fluid'>
-                <div className={css.sectionPart}>
+                <div>
                   <ContactIntroductionComponent/>
                   <ContactApplyComponent/>
                   <ContactInformationComponent/>

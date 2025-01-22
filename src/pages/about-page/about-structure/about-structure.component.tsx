@@ -156,13 +156,13 @@ const AboutStructureComponent = () => {
                             <img src={close} alt={translate('img_alt')} />
                           </div>
                         </div>
-                        <div className='row' style={{margin: 0}}>
-                            <div className='col-lg-6' style={{padding: 0}}>
+                        <div className='row m-0'>
+                            <div className='col-lg-6 p-0'>
                               <div className={css.img}>
                                 <img src={detailsActive.img} alt={translate('img_alt')} />
                               </div>
                             </div>
-                            <div className='col-lg-6' style={{padding: 0}}>
+                            <div className='col-lg-6 p-0'>
                               <div className={css.detailsRight}>
                                 <SectionTitleComponent 
                                 title={detailsActive.name} 

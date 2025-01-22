@@ -55,8 +55,6 @@
                 transition: 0.5s;
                 cursor: pointer;
                 @include breakpoint($lg) {
-                    // display: flex;
-                    // justify-content: space-between;
                 }
 
                 &:hover {

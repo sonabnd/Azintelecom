@@ -51,10 +51,6 @@
                     font-size: rem(15);
                     font-family: $jakartaRegular;
                     color: $white;
-                    // &::placeholder {
-                    //     font-size: rem(15);
-                    //     opacity: 70%;
-                    // }
                     @include breakpoint($lg) {
                         margin-bottom: rem(12);
                         width: 100%;
@@ -85,7 +81,6 @@
                     cursor: pointer;
                     @include breakpoint($lg) {
                         width: 100%;
-                        // padding: 0;
                         margin-left: 0;
                     }
                 }
@@ -112,9 +107,6 @@
                             width: rem(36);
                             height: rem(36);
                         }
-                    }
-                    .rightText {
-
                     }
                 }
             }

@@ -1,8 +1,6 @@
-import useLocalization from '../../../assets/lang'
 import css from './section-title.module.scss'
 
-const SectionTitleComponent = ({title, description, forTitle, forDescription, headingDescription}) => {
-    const translate = useLocalization();
+const SectionTitleComponent = ({title, description, forTitle, forDescription, headingDescription}: any) => {
 
     return (
         <div className={css.heading}>

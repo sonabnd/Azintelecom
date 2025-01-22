@@ -1,14 +1,19 @@
 @import '/src/assets/styles/style.scss';
-
-// .gm-style button,
-// .gm-style div[title] {
-//   display: none !important;
-// }
-
-// .contact {
-//     background-image: ;
-// }
 .map {
     margin-top: rem(24);
     border-radius: rem(40);
+    overflow: hidden;
+    border-radius: rem(40);
+    position: relative;
+    background: radial-gradient(49.81% 49.81% at 50% 50.19%, rgba(13, 18, 28, 0.32) 0%, rgba(13, 18, 28, 0.64) 100%) !important;
+
+    .marker {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }

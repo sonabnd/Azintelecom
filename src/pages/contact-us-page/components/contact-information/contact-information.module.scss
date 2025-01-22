@@ -26,9 +26,11 @@
                 padding: rem(40) 0 rem(28) rem(40);
                 background-repeat: no-repeat;
                 background-size: cover;
+
                 @include breakpoint($sm) {
                     padding: rem(16);
                 }
+
                 p {
                     margin-bottom: rem(12);
                     color: $gray-300;
@@ -36,12 +38,14 @@
 
                 &:first-child .contactUs {
                     display: flex;
+
                     @include breakpoint($md) {
-                        flex-direction: column;    
+                        flex-direction: column;
                     }
+
                     p {
                         margin-right: rem(24);
-                        
+
                     }
                 }
 
@@ -53,6 +57,7 @@
                     font-size: rem(26);
                     margin-bottom: rem(20);
                     font-family: $jakartaSemiBold;
+
                     @include breakpoint($lg) {
                         font-size: rem(20);
                         line-height: rem(26);
@@ -65,6 +70,7 @@
                     margin-bottom: rem(24);
                     background-image: url('/src/assets/images/statics/contact-info-background-1.png');
                     position: relative;
+
                     &::after {
                         content: '';
                         background-image: url('/src/assets/images/statics/contact-info1-bg.png');
@@ -86,16 +92,17 @@
                     background-image: url('/src/assets/images/statics/contact-info-bg.png');
 
                     @include breakpoint($lg) {
-                        flex: 0 0 100%; 
-                        max-width: 100%; 
+                        flex: 0 0 100%;
+                        max-width: 100%;
                         margin-bottom: rem(24);
                     }
                 }
 
                 &:nth-child(3) {
                     margin-left: auto;
+
                     @include breakpoint($lg) {
-                        margin-left: 0; 
+                        margin-left: 0;
                     }
                 }
             }

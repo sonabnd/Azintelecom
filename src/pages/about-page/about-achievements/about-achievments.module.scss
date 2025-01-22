@@ -158,142 +158,19 @@
     width: rem(290);
     height: rem(290);
     position: relative;
-
-    @media (min-width: $xl) {
-        animation: slideUpCard1 2s ease-out forwards;
-        animation-fill-mode: both;
-        transform-origin: center center;
-    }
 }
 
 .card-2 {
     width: rem(360);
     height: rem(360);
-
-    @media (min-width: $xl) {
-        animation: slideUpCard2 2s ease-out forwards;
-        animation-fill-mode: both;
-        transform-origin: center center;
-        animation-delay: .1s;
-        position: relative;
-        transform: translate(50vw, calc(100vh - 100px));
-    }
 }
 
 .card-3 {
     width: rem(312);
     height: rem(312);
-
-    @media (min-width: $xl) {
-        animation: slideUpCard3 2s ease-out forwards;
-        animation-fill-mode: both;
-        transform-origin: center center;
-        position: relative;
-        transform: translate(50vw, calc(100vh - 100px));
-
-    }
 }
 
 .card-4 {
     width: rem(224);
     height: rem(224);
-
-    @media (min-width: $xl) {
-
-        animation: slideUpCard4 2s ease-out forwards;
-        animation-fill-mode: both;
-        transform-origin: center center;
-        position: relative;
-        transform: translate(50vw, calc(100vh - 100px));
-    }
-}
-
-
-
-@keyframes slideUpCard1 {
-    0% {
-        transform: translate(25vw, calc(100vh - 100px));
-    }
-
-    40% {
-        transform: translate(-20px, 40px);
-        scale: 1.05;
-        transform-origin: center center;
-    }
-
-    70% {
-        transform: translate(2px, 64px);
-        scale: .99;
-    }
-
-    100% {
-        transform: translateY(62px);
-        scale: 1;
-    }
-}
-
-@keyframes slideUpCard2 {
-    0% {
-        transform: translate(25vw, calc(100vh - 100px));
-    }
-
-    40% {
-        transform: translate(-20px, 170px);
-        scale: 1.05;
-        transform-origin: center center;
-    }
-
-    70% {
-        transform: translate(2px, 190px);
-        scale: .99;
-    }
-
-    100% {
-        transform: translateY(192px);
-        scale: 1;
-    }
-}
-
-@keyframes slideUpCard3 {
-    0% {
-        transform: translate(-10vw, calc(100vh - 100px));
-    }
-
-    40% {
-        transform: translate(20px, -10px);
-        scale: 1.05;
-        transform-origin: center center;
-    }
-
-    70% {
-        transform: translate(2px, 36px);
-        scale: .99;
-    }
-
-    100% {
-        transform: translateY(34px);
-        scale: 1;
-    }
-}
-
-@keyframes slideUpCard4 {
-    0% {
-        transform: translate(-11vw, calc(100vh - 100px));
-    }
-
-    40% {
-        transform: translate(20px, 274px);
-        scale: 1.05;
-        transform-origin: center center;
-    }
-
-    70% {
-        transform: translate(2px, 294px);
-        scale: .99;
-    }
-
-    100% {
-        transform: translateY(296px);
-        scale: 1;
-    }
 }

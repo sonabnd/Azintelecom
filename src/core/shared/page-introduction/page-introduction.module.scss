@@ -3,12 +3,9 @@
 .introSection {
     padding-top: rem(200);
     padding-bottom: rem(160);
-    // display: flex;
-    // justify-content: center;
     margin: auto;
     @include breakpoint($lg) {
         padding-top: rem(90);
-        // padding-left: rem(40);
         justify-content: start;
     }
     .intro {

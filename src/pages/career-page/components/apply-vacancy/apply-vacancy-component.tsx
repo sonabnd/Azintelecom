@@ -3,12 +3,10 @@ import css from './apply-vacancy.module.scss';
 import telephoneIcon from '/src/assets/images/icons/telephone-icon.png';
 import mailIcon from '/src/assets/images/icons/mail-icon.png';
 import locationIcon from '/src/assets/images/icons/location-icon.png';
-import { Upload, Button } from 'antd';
-import { UploadOutlined } from '@ant-design/icons';
 
 const ApplyVacancyComponent = () => {
     const translate = useLocalization();
-    const contactData= [
+    const contactData = [
         {
             id: 1,
             img: telephoneIcon,
@@ -26,13 +24,6 @@ const ApplyVacancyComponent = () => {
         },
     ]
 
-    const uploadProps = {
-        beforeUpload: (file) => {
-            console.log(file); // Fayl yükləməzdən əvvəl işlənən funksiya
-            return false; // Faylın dərhal serverə yüklənməməsi üçün
-        },
-    };
-
     return (
         <div className={css.career}>
             <div className='container'>
@@ -43,13 +34,8 @@ const ApplyVacancyComponent = () => {
                                 <p className={css.text}>{translate('apply_vacancy_text')}</p>
                                 <span className={css.description}>{translate('apply_vacancy_description')}</span>
                                 <div className={css.file}>
-                                    <label className={css.fileUpload}  htmlFor="file-upload">Faylı yükləyin...</label>
-                                    <input style={{display:'none'}} id='file-upload' type="file" placeholder={translate('apply_vacancy_placeholder')} />
-                                    {/* <Upload {...uploadProps} className={css.fileUpload}>
-                                        <Button className={css.uploadButton}>
-                                            Fayl yukle.
-                                        </Button>
-                                    </Upload> */}
+                                    <label className={css.fileUpload} htmlFor="file-upload">{translate('apply_vacancy_placeholder')}</label>
+                                    <input style={{ display: 'none' }} id='file-upload' type="file" placeholder={translate('apply_vacancy_placeholder')} />
                                     <button>{translate('send_cv')}</button>
                                 </div>
                             </div>
@@ -57,14 +43,14 @@ const ApplyVacancyComponent = () => {
                         <div className='col-lg-5'>
                             <div className={css.right}>
                                 <ul className={css.contactList}>
-                                {
-                                    contactData.map(item => (
-                                        <li key={item.id} className={css.contactItem}>
-                                            <img src={item.img} alt={translate('img_alt')} />
-                                            <span className={css.rightText}>{item.text}</span>
-                                        </li>
-                                    ))
-                                }
+                                    {
+                                        contactData.map(item => (
+                                            <li key={item.id} className={css.contactItem}>
+                                                <img src={item.img} alt={translate('img_alt')} />
+                                                <span className={css.rightText}>{item.text}</span>
+                                            </li>
+                                        ))
+                                    }
                                 </ul>
                             </div>
                         </div>

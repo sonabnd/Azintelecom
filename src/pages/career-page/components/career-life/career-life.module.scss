@@ -16,6 +16,9 @@
         z-index: -1;
         background-image: url('/src/assets/images/statics/life-left-effect.png');
         background-repeat: no-repeat;
+        @include breakpoint($sm) {
+            display: none;
+        }
     }
 
     &::after {
@@ -29,12 +32,16 @@
         z-index: -1;
         background-image: url('/src/assets/images/statics/life-right-effect.png');
         background-repeat: no-repeat;
+        @include breakpoint($sm) {
+            display: none;
+        }
     }
     .life {
         padding-top: rem(120);
         padding-bottom: rem(120);
         @include breakpoint($lg) {
-            flex-direction: column;
+            padding-top: rem(40);
+            padding-bottom: rem(40);
         }
         .heading {
             display: flex;
@@ -96,64 +103,119 @@
                 }
             }
         }
-
-        .card {
-            position: relative;
-            @include breakpoint($lg) {
-                width: 100% !important; 
-                margin-bottom: 20px;
+        .linkContainer {
+            .mySwiper {
+                @include breakpoint($sm) {
+                    display: none;
+                }
+                .card {
+                    .cardInner {
+                        box-sizing: border-box;
+                        position: relative;
+                        width: 100%;
+                        height: rem(288);
+                        .img {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            height: 100%;
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+                        &:hover {
+                            background: linear-gradient(180deg, rgba(13, 18, 28, 0) 0%, rgba(13, 18, 28, 0.64) 100%);
+                        }
+                    }
+                    .goTo {
+                        background-color: $button-color;
+                        border-radius: rem(10);
+                        display: inline-block;
+                        height: rem(48);
+                        width: rem(107);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        cursor: pointer;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        visibility: hidden;
+                        transition: .1s;
+                        @include breakpoint($lg) {
+                            display: none;
+                        }
+                        a {
+                            color: $white;
+                        }
+                    }
+                    &:before {
+                        content: '';
+                        background-image: url('/src/assets/images/statics/life-img.png');
+                        position: absolute;
+                        width: 100%;
+                        height: 0%;
+                        transition: .5s;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        bottom: 0;
+                        right: 0;
+                        @include breakpoint($lg) {
+                            display: none;
+                        }
+                    }
+        
+                    &:hover:before {
+                        height: 60%;
+                        @include breakpoint($lg) {
+                            display: none;
+                        }
+                    }
+        
+                    &:hover .goTo {
+                        visibility: visible;
+                        @include breakpoint($lg) {
+                            display: none;
+                        }
+                    }
+        
+                    &:hover .cardInner {
+                        opacity: 0.3;
+                        filter: blur(2px);
+                        @include breakpoint($lg) {
+                            display: none;
+                        }
+                    }
+                }
             }
-            .cardInner {
-
-
-                box-sizing: border-box;
-
-                .goTo {
-                    background-color: $button-color;
-                    border-radius: rem(10);
-                    display: inline-block;
-                    height: rem(48);
-                    width: rem(107);
+            .mobile {
+                display: none;
+                @include breakpoint($sm) {
+                    display: block;
+                }
+                .mobileContainer {
                     display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    cursor: pointer;
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    visibility: hidden;
-                    transition: .1s;
+                    flex-direction: column;
 
-                    a {
-                        color: $white;
+                    .mobileCard {
+                        margin-bottom: rem(24);
+                        .mobileImg {
+                            height: rem(288);
+                            width: 100%;
+                            border-radius: rem(24);
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                border-radius: rem(24);
+                            }
+                        }
                     }
                 }
 
-            }
-            &:before {
-                content: '';
-                background-image: url('/src/assets/images/statics/life-img.png');
-                position: absolute;
-                width: 100%;
-                height: 0%;
-                transition: .5s;
-                background-size: cover;
-                background-repeat: no-repeat;
-                bottom: 0;
-                right: 0;
-            }
-
-            &:hover:before {
-                height: 60%;
-            }
-
-            &:hover .goTo {
-                visibility: visible;
-            }
-
-            &:hover .cardInner {
-                opacity: 0.4;
             }
         }
     }

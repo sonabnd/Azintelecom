@@ -4,7 +4,6 @@ import css from './contact-information.module.scss';
 import icon1 from '/src/assets/images/icons/contact-info1.png';
 import icon2 from '/src/assets/images/icons/contact-info2.png';
 import icon3 from '/src/assets/images/icons/contact-info3.png';
-import classNames from 'classnames';
 
 const ContactInformationComponent = () => {
     const translate = useLocalization();

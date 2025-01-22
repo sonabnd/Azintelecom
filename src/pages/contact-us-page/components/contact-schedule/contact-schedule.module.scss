@@ -10,8 +10,6 @@
         padding-top: rem(40);
         padding-bottom: rem(40);
     }
-
-    .contactSchedule {}
 }
 
 .forTitle {
@@ -40,9 +38,10 @@
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
     -ms-overflow-style: none;
+
     @include breakpoint($lg) {
         overflow-x: auto;
-        -webkit-overflow-scrolling: touch; 
+        -webkit-overflow-scrolling: touch;
     }
 
 
@@ -50,27 +49,34 @@
         min-width: 800px;
         table-layout: auto;
         color: $gray-800 !important;
+
         tr td {
             font-family: $jakartaSemiBold;
             font-size: rem($text);
+
             &:last-child {
                 font-family: $jakartaRegular;
                 font-size: rem(15);
             }
+
             @include breakpoint($sm) {
                 font-size: rem(16);
             }
         }
+
         th td {
             font-family: $jakartaMedium;
             font-size: rem(15);
+
             @include breakpoint($sm) {
                 font-size: rem(14);
             }
         }
+
         tr:hover {
             background-color: $white !important;
         }
+
         th {
             background-color: $gray-100 !important;
         }

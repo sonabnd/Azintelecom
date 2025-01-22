@@ -7,7 +7,6 @@ import { Routes } from '../../../router/routes';
 
 
 const PageIntroductionComponent = ({ title, description }: { title: string; description: string}) => {
-    const translate = useLocalization();
 
     return (
         <div className={css.introSection}>

@@ -3,7 +3,6 @@ import useLocalization from '../../../../assets/lang'
 import css from './career-life.module.scss'
 import left from '/src/assets/images/icons/navigate-left.png';
 import right from '/src/assets/images/icons/navigate-right.png';
-import goTo from '/src/assets/images/icons/useful-goTo.png';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -62,7 +61,7 @@ const CareerLifeComponent = () => {
       swiperRef.current.swiper.slidePrev();
     };
   }, [])
-
+  const path= 'https://www.linkedin.com/company/azintelecom-llc/posts/?feedView=all'
   return (
     <div className={css.career}>
       <section>
@@ -83,7 +82,7 @@ const CareerLifeComponent = () => {
               <div className={css.links}>
                 <div className={css.linkContainer}>
                   <Swiper
-                    slidesPerView={3}
+                    slidesPerView={4}
                     spaceBetween={24}
                     pagination={{
                       clickable: true,
@@ -98,11 +97,15 @@ const CareerLifeComponent = () => {
                         spaceBetween: 30,
                       },
                       991: {
-                        slidesPerView: 1,
+                        slidesPerView: 3,
                         spaceBetween: 20,
                       },
                       768: {
-                        slidesPerView: 1,
+                        slidesPerView: 2.8,
+                        spaceBetween: 18,
+                      },
+                      576: {
+                        slidesPerView: 2,
                         spaceBetween: 10,
                       },
                       0: {
@@ -115,15 +118,30 @@ const CareerLifeComponent = () => {
                       <SwiperSlide key={item.id}>
                         <div className={css.card} >
                           <div className={css.cardInner}>
-                            <img src={item.img} alt={translate('img_alt')} />
-                            <div className={css.goTo}>
-                              <Link to={'https://www.linkedin.com/company/azintelecom-llc/posts/?feedView=all'}>{translate('linkedin')}</Link>
+                            <div className={css.img}>
+                              <img src={item.img} alt={translate('img_alt')} />
                             </div>
                           </div>
+                            <div className={css.goTo}>
+                              <Link to={path}>{translate('linkedin')}</Link>
+                            </div>
                         </div>
                       </SwiperSlide>
                     ))}
                   </Swiper>
+                  <div className={css.mobile}>
+                    <div className={css.mobileContainer}>
+                      {
+                        lifeData.map((item) => (
+                          <div className={css.mobileCard} key={item.id}>
+                            <div className={css.mobileImg}>
+                              <img src={item.img} alt={translate('img_alt')} />
+                            </div>
+                          </div>
+                        ))
+                      }
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
