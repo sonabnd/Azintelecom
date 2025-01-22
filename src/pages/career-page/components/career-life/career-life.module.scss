@@ -5,6 +5,7 @@
     z-index: 1;
     background-image: url('/src/assets/images/statics/life-bg.png');
     background-repeat: no-repeat;
+    border-radius: rem(48);
     &::before {
         content: '';
         position: absolute;
@@ -16,6 +17,7 @@
         z-index: -1;
         background-image: url('/src/assets/images/statics/life-left-effect.png');
         background-repeat: no-repeat;
+        border-radius: rem(48);
         @include breakpoint($sm) {
             display: none;
         }
@@ -32,6 +34,7 @@
         z-index: -1;
         background-image: url('/src/assets/images/statics/life-right-effect.png');
         background-repeat: no-repeat;
+        border-radius: rem(48);
         @include breakpoint($sm) {
             display: none;
         }
