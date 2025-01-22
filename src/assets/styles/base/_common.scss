@@ -39,3 +39,23 @@
   overflow: hidden;
   margin-bottom: rem(24);
 }
+
+::-webkit-scrollbar {
+  width: rem(8); 
+  height: rem(5); 
+  border-radius: 0;
+  padding-left: rem(1);
+  padding-right: rem(1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #5548c8; 
+  border-radius: 0;
+  width: rem(10); 
+}
+
+::-webkit-scrollbar-track {
+  background-color: $blue-600-08; 
+  border: 1px solid $blue-300;
+  border-radius: 0;
+}
